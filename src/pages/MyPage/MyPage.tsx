@@ -5,10 +5,10 @@ const MyPage: React.FC = () => {
         <div className="flex flex-col items-center mx-auto">
             <header className="w-full flex justify-between items-center py-4">
             <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] text-left ml-6">마이페이지</h1>
-              <img className="mr-6" src="../../../assets/images/ico_alarm.png" alt="Alarm Icon"></img>
+              <img className="mr-6" src="../../../assets/images/alarm.svg"></img>
             </header>
             <div className="flex flex-col items-center mt-5 text-center">
-                <img src="../../assets/Ellipse 222.svg" className="w-20 h-20" />
+                <img src="../../assets/images/profile.svg" className="w-20 h-20" />
                 <h2 className="text-[20px] text-black font-pretendard font-bold leading-[24px] mt-3">김잇픽</h2>
                 <p className="text-[14px] text-gray3 mt-1">kimitpick@gmail.com</p>
                 <div className="flex gap-8 mt-5">
