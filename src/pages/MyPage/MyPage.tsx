@@ -26,15 +26,10 @@ const MyPage: React.FC = () => {
                     <p className="text-[16px] text-black font-pretendard font-normal py-3">내가 참여한 토론</p>
                 </div>
                 <div className="w-full h-0.5 bg-gray1"></div>
-                <div className="ml-6 my-2">
-                    <h3 className="text-[16px] text-black font-pretendard font-bold py-3">설정</h3>
-                    <p className="text-[16px] text-black font-pretendard font-normal py-3">회원정보</p>
-                </div>
-                <div className="w-full h-0.5 bg-gray1"></div>
                 <div className="ml-6 mt-2">
+                    <p className="text-[16px] text-black font-pretendard font-bold py-3">공지사항</p>
                     <p className="text-[16px] text-black font-pretendard font-normal py-3">자주 묻는 질문</p>
                     <p className="text-[16px] text-black font-pretendard font-normal py-3">약관 및 정책</p>
-                    <p className="text-[16px] text-errorpoint font-pretendard font-normal py-3">탈퇴하기</p>
                 </div>
             </div>
         </div>
