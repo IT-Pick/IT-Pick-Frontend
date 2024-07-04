@@ -10,7 +10,7 @@ const MyPage: React.FC = () => {
               <button className="mr-6"><img src={alarm} alt="alarm_icon"/></button>
             </header>
             <div className="flex flex-col items-center mt-5 text-center">
-                <img src={profile} className="w-20 h-20" />
+                <img src={profile} alt="profile_image" className="w-20 h-20" />
                 <h2 className="text-[20px] text-black font-pretendard font-bold leading-[24px] mt-3">김잇픽</h2>
                 <p className="text-[14px] text-gray3 mt-1">kimitpick@gmail.com</p>
                 <div className="flex gap-8 mt-5">
