@@ -1,6 +1,6 @@
 import React from 'react';
 import alarm from '../../assets/images/ic_alarm.svg';
-import profile from '../../assets/images/profile.svg';
+import profile from '../../assets/images/ic_profile.svg';
 
 const MyPage: React.FC = () => {
     return (
