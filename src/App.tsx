@@ -1,21 +1,9 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import HomePage from './pages/HomePage/HomePage';
+import RangkingPage from './pages/RankingPage/RankingPage';
 
-function Home() {
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h2 className="text-4xl font-bold text-blue-600">Home</h2>
-    </div>
-  );
-}
 
-function About() {
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h2 className="text-4xl font-bold text-blue-600">About</h2>
-    </div>
-  );
-}
 
 function App() {
   return (
@@ -28,15 +16,16 @@ function App() {
             </Link>
           </li>
           <li>
-            <Link to="/about" className="text-white hover:text-gray-300">
-              About
+            <Link to="/ranking" className="text-white hover:text-gray-300">
+              Ranking
             </Link>
           </li>
         </ul>
       </nav>
+      
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/ranking" element={<RangkingPage />} />
       </Routes>
     </div>
   );
