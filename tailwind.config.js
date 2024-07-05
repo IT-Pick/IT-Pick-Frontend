@@ -15,6 +15,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    margin: {
+      '22px': '22px',
+      '42px': '42px',
+    },
   },
   plugins: [],
 }
