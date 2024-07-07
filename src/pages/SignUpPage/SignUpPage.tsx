@@ -1,0 +1,177 @@
+import React, { useState } from 'react';
+import certifyUnable from '../../assets/images/ic_btn_certify_unable.svg';
+import certifyAble from '../../assets/images/ic_btn_certify_able.svg';
+import unchecked from '../../assets/images/ic_checkbox_unchecked.svg';
+import checked from '../../assets/images/ic_checkbox_checked.svg';
+import hideIcon from '../../assets/images/ic_icon_hide.svg';
+import showIcon from '../../assets/images/ic_icon_show.svg';
+
+
+const SignUpPage: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [agreeToMarketing, setAgreeToMarketing] = useState(false);
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+    setIsEmailValid(validateEmail(newEmail));
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const password = event.target.value;
+    setPassword(password);
+    setIsPasswordValid(/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})/.test(password));
+  };
+
+  const handleConfirmPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setConfirmPassword(event.target.value);
+  };
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const handleToggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
+  const handleAgreeToTermsChange = () => {
+    setAgreeToTerms(agreeToTerms);
+  };
+
+  const handleAgreeToMarketingChange = () => {
+    setAgreeToMarketing(agreeToMarketing);
+  };
+
+  const isFormValid = isEmailValid && isPasswordValid && password === confirmPassword && agreeToTerms;
+
+  return (
+    <div className="w-full mx-auto pt-[72px]">
+      <h1 className="text-2xl font-pretendard font-bold ml-6">
+        <span className="text-point500">회원가입</span>을 위한<br />정보를 입력해주세요.
+      </h1>
+      <div className="mt-9 mb-4 mx-8">
+        <label className="block font-pretendard font-bold text-[16px] text-black">이메일</label>
+        <div className="relative">
+          <input
+            type="email"
+            value={email}
+            onChange={handleEmailChange}
+            className="w-full p-2 border border-gray-300 rounded mt-1"
+          />
+          <button
+            type="button"
+            className="absolute inset-y-0 right-0 flex items-center justify-center p-2"
+            style={{ background: 'none', border: 'none', width: '73px', height: '28px', marginTop: '12px' }}
+            disabled={!isEmailValid}
+          >
+            <img src={isEmailValid ? certifyAble : certifyUnable} alt="email validation" />
+          </button>
+        </div>
+        {!isEmailValid && email.length > 0 && (
+          <p className="text-red-500 text-sm">이메일 주소를 정확하게 입력해주세요.</p>
+        )}
+      </div>
+      <div className="mb-4 mx-8">
+        <label className="block font-pretendard font-bold text-[16px] text-black">비밀번호</label>
+        <div className="relative">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            value={password}
+            onChange={handlePasswordChange}
+            className="w-full p-2 border border-gray-300 rounded mt-1"
+          />
+          <button
+            type="button"
+            onClick={handleTogglePasswordVisibility}
+            className="absolute inset-y-0 right-0 px-3 flex items-center text-gray-500"
+          >
+            <img src={showPassword ? showIcon : hideIcon} alt="toggle password visibility" />
+          </button>
+        </div>
+        {!isPasswordValid && password.length > 0 && (
+          <p className="text-red-500 text-sm">영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요.</p>
+        )}
+      </div>
+      <div className="mb-4 mx-8">
+        <label className="block font-pretendard font-bold text-[16px] text-black">비밀번호 확인</label>
+        <div className="relative">
+          <input
+            type={showConfirmPassword ? 'text' : 'password'}
+            value={confirmPassword}
+            onChange={handleConfirmPasswordChange}
+            className="w-full p-2 border border-gray-300 rounded mt-1"
+          />
+          <button
+            type="button"
+            onClick={handleToggleConfirmPasswordVisibility}
+            className="absolute inset-y-0 right-0 px-3 flex items-center text-gray-500"
+          >
+            <img src={showConfirmPassword ? showIcon : hideIcon} alt="toggle password visibility check"/>
+          </button>
+        </div>
+        {confirmPassword.length > 0 && password !== confirmPassword && (
+          <p className="text-red-500 text-sm">비밀번호가 일치하지 않습니다.</p>
+        )}
+      </div>
+      <div>
+        <div className="mb-4 ml-[26px]">
+          <label className="flex items-center font-pretendard font-medium text-[16px] text-black">
+            <input
+              type="checkbox"
+              checked={agreeToTerms}
+              onChange={handleAgreeToTermsChange}
+              className="hidden"
+            />
+            <img
+              src={agreeToTerms ? checked : unchecked}
+              alt="checkbox"
+              onClick={handleAgreeToTermsChange}
+              className="cursor-pointer mr-2"
+            />
+            [필수] 만 14세 이상이며 모두 동의합니다.
+          </label>
+        </div>
+        <div className="mb-4 ml-[26px]">
+          <label className="flex items-center font-pretendard font-medium text-[16px] text-black">
+            <input
+              type="checkbox"
+              checked={agreeToMarketing}
+              onChange={handleAgreeToMarketingChange}
+              className="hidden"
+            />
+            <img
+              src={agreeToMarketing ? checked : unchecked}
+              alt="checkbox"
+              onClick={handleAgreeToMarketingChange}
+              className="cursor-pointer mr-2"
+            />
+            [선택] 광고성 정보 수신에 모두 동의합니다.
+          </label>
+        </div>
+      </div>
+      <div className="mx-5 mb-4">
+        <button
+          className={`w-full py-2 rounded ${isFormValid ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-500'}`}
+          disabled={!isFormValid}
+        >
+          가입하기
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default SignUpPage;
