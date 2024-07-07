@@ -5,6 +5,8 @@ import unchecked from '../../assets/images/ic_checkbox_unchecked.svg';
 import checked from '../../assets/images/ic_checkbox_checked.svg';
 import hideIcon from '../../assets/images/ic_icon_hide.svg';
 import showIcon from '../../assets/images/ic_icon_show.svg';
+import signUpUnable from '../../assets/images/ic_btn_sign_up_unable.svg';
+import signUpAble from '../../assets/images/ic_btn_sign_up_able.svg';
 
 
 const SignUpPage: React.FC = () => {
@@ -62,9 +64,9 @@ const SignUpPage: React.FC = () => {
       <h1 className="text-2xl font-pretendard font-bold ml-6">
         <span className="text-point500">회원가입</span>을 위한<br />정보를 입력해주세요.
       </h1>
-      <div className="mt-9 mb-4 mx-8">
-        <label className="block font-pretendard font-bold text-[16px] text-black">이메일</label>
-        <div className="relative">
+      <div className="mt-9 mb-4">
+        <label className="block font-pretendard font-bold text-[16px] text-black ml-8">이메일</label>
+        <div className="relative mx-5">
           <input
             type="email"
             value={email}
@@ -84,9 +86,9 @@ const SignUpPage: React.FC = () => {
           <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">이메일 주소를 정확하게 입력해주세요.</p>
         )}
       </div>
-      <div className="mb-4 mx-8">
-        <label className="block font-pretendard font-bold text-[16px] text-black">비밀번호</label>
-        <div className="relative">
+      <div className="mb-4">
+        <label className="block font-pretendard font-bold text-[16px] text-black ml-8 mt-[39px]">비밀번호</label>
+        <div className="relative mx-5">
           <input
             type={showPassword ? 'text' : 'password'}
             value={password}
@@ -105,9 +107,9 @@ const SignUpPage: React.FC = () => {
           <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요.</p>
         )}
       </div>
-      <div className="mb-4 mx-8">
-        <label className="block font-pretendard font-bold text-[16px] text-black">비밀번호 확인</label>
-        <div className="relative">
+      <div className="mb-4">
+        <label className="block font-pretendard font-bold text-[16px] text-black ml-8 mt-[39px]">비밀번호 확인</label>
+        <div className="relative mx-5">
           <input
             type={showConfirmPassword ? 'text' : 'password'}
             value={confirmPassword}
@@ -127,8 +129,8 @@ const SignUpPage: React.FC = () => {
         )}
       </div>
       <div>
-        <div className="mb-4 ml-[26px]">
-          <label className="flex items-center font-pretendard font-medium text-[16px] text-black">
+        <div className="mb-4 mt-[53px] ml-[26px]">
+          <label className="flex items-center font-pretendard font-medium text-[14px] text-black">
             <input
               type="checkbox"
               checked={agreeToTerms}
@@ -139,13 +141,13 @@ const SignUpPage: React.FC = () => {
               src={agreeToTerms ? checked : unchecked}
               alt="checkbox"
               onClick={handleAgreeToTermsChange}
-              className="cursor-pointer mr-2"
+              className="cursor-pointer mr-[10px]"
             />
             [필수] 만 14세 이상이며 모두 동의합니다.
           </label>
         </div>
-        <div className="mb-4 ml-[26px]">
-          <label className="flex items-center font-pretendard font-medium text-[16px] text-black">
+        <div className="mb-4 mt-[20px] ml-[26px]">
+          <label className="flex items-center font-pretendard font-medium text-[14px] text-black">
             <input
               type="checkbox"
               checked={agreeToMarketing}
@@ -156,18 +158,19 @@ const SignUpPage: React.FC = () => {
               src={agreeToMarketing ? checked : unchecked}
               alt="checkbox"
               onClick={handleAgreeToMarketingChange}
-              className="cursor-pointer mr-2"
+              className="cursor-pointer mr-[10px]"
             />
             [선택] 광고성 정보 수신에 모두 동의합니다.
           </label>
         </div>
       </div>
-      <div className="mx-5 mb-4">
+      <div className="mx-5 mt-[30px] mb-4">
         <button
-          className={`w-full py-2 rounded ${isFormValid ? 'bg-blue-500 text-white' : 'bg-gray-300 text-gray-500'}`}
+          className={`w-full py-2 rounded flex items-center justify-center`}
           disabled={!isFormValid}
+          style={{ background: 'none', border: 'none', padding: 0 }}
         >
-          가입하기
+          <img src={isFormValid ? signUpAble : signUpUnable} alt="sign up button" style={{ width: '100%', height: '46px' }}/>
         </button>
       </div>
     </div>
