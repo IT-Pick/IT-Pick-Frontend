@@ -48,11 +48,11 @@ const SignUpPage: React.FC = () => {
   };
 
   const handleAgreeToTermsChange = () => {
-    setAgreeToTerms(agreeToTerms);
+    setAgreeToTerms(!agreeToTerms);
   };
 
   const handleAgreeToMarketingChange = () => {
-    setAgreeToMarketing(agreeToMarketing);
+    setAgreeToMarketing(!agreeToMarketing);
   };
 
   const isFormValid = isEmailValid && isPasswordValid && password === confirmPassword && agreeToTerms;
@@ -81,7 +81,7 @@ const SignUpPage: React.FC = () => {
           </button>
         </div>
         {!isEmailValid && email.length > 0 && (
-          <p className="text-red-500 text-sm">이메일 주소를 정확하게 입력해주세요.</p>
+          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">이메일 주소를 정확하게 입력해주세요.</p>
         )}
       </div>
       <div className="mb-4 mx-8">
@@ -102,7 +102,7 @@ const SignUpPage: React.FC = () => {
           </button>
         </div>
         {!isPasswordValid && password.length > 0 && (
-          <p className="text-red-500 text-sm">영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요.</p>
+          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요.</p>
         )}
       </div>
       <div className="mb-4 mx-8">
@@ -123,7 +123,7 @@ const SignUpPage: React.FC = () => {
           </button>
         </div>
         {confirmPassword.length > 0 && password !== confirmPassword && (
-          <p className="text-red-500 text-sm">비밀번호가 일치하지 않습니다.</p>
+          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">비밀번호가 일치하지 않습니다.</p>
         )}
       </div>
       <div>
