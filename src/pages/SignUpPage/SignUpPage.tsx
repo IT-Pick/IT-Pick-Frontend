@@ -71,7 +71,8 @@ const SignUpPage: React.FC = () => {
             type="email"
             value={email}
             onChange={handleEmailChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1"
+            placeholder="이메일을 입력해주세요"
+            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium"
           />
           <button
             type="button"
@@ -93,7 +94,8 @@ const SignUpPage: React.FC = () => {
             type={showPassword ? 'text' : 'password'}
             value={password}
             onChange={handlePasswordChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1"
+            placeholder="영문, 숫자, 특수문자 포함 8자 이상"
+            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium"
           />
           <button
             type="button"
@@ -114,7 +116,8 @@ const SignUpPage: React.FC = () => {
             type={showConfirmPassword ? 'text' : 'password'}
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
-            className="w-full p-2 border border-gray-300 rounded mt-1"
+            placeholder="비밀번호를 다시 입력해주세요"
+            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium"
           />
           <button
             type="button"
