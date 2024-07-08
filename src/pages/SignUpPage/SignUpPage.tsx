@@ -5,9 +5,6 @@ import unchecked from '../../assets/images/ic_checkbox_unchecked.svg';
 import checked from '../../assets/images/ic_checkbox_checked.svg';
 import hideIcon from '../../assets/images/ic_icon_hide.svg';
 import showIcon from '../../assets/images/ic_icon_show.svg';
-import signUpUnable from '../../assets/images/ic_btn_sign_up_unable.svg';
-import signUpAble from '../../assets/images/ic_btn_sign_up_able.svg';
-
 
 const SignUpPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -72,7 +69,8 @@ const SignUpPage: React.FC = () => {
             value={email}
             onChange={handleEmailChange}
             placeholder="이메일을 입력해주세요"
-            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium"
+            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium focus:outline-none"
+            style={{ appearance: 'none', boxShadow: 'none' }}
           />
           <button
             type="button"
@@ -84,7 +82,7 @@ const SignUpPage: React.FC = () => {
           </button>
         </div>
         {!isEmailValid && email.length > 0 && (
-          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">이메일 주소를 정확하게 입력해주세요.</p>
+          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1 ml-8">이메일 주소를 정확하게 입력해주세요.</p>
         )}
       </div>
       <div className="mb-4">
@@ -106,7 +104,7 @@ const SignUpPage: React.FC = () => {
           </button>
         </div>
         {!isPasswordValid && password.length > 0 && (
-          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요.</p>
+          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1 ml-8">영문, 숫자, 특수문자를 포함하여 8자 이상 입력해주세요.</p>
         )}
       </div>
       <div className="mb-4">
@@ -128,7 +126,7 @@ const SignUpPage: React.FC = () => {
           </button>
         </div>
         {confirmPassword.length > 0 && password !== confirmPassword && (
-          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1">비밀번호가 일치하지 않습니다.</p>
+          <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1 ml-8">비밀번호가 일치하지 않습니다.</p>
         )}
       </div>
       <div>
@@ -169,11 +167,10 @@ const SignUpPage: React.FC = () => {
       </div>
       <div className="mx-5 mt-[30px] mb-4">
         <button
-          className={`w-full py-2 rounded flex items-center justify-center`}
+          className={`w-full h-[48px] py-2 rounded flex items-center justify-center font-pretendard font-bold text-[16px] text-white ${isFormValid ? 'bg-point500' : 'bg-gray2'}`}
           disabled={!isFormValid}
-          style={{ background: 'none', border: 'none', padding: 0 }}
-        >
-          <img src={isFormValid ? signUpAble : signUpUnable} alt="sign up button" style={{ width: '100%', height: '46px' }}/>
+          style={{ border: 'none', padding: 0 }}
+        >가입하기
         </button>
       </div>
     </div>
