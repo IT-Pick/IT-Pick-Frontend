@@ -93,7 +93,7 @@ const SignUpPage: React.FC = () => {
             value={password}
             onChange={handlePasswordChange}
             placeholder="영문, 숫자, 특수문자 포함 8자 이상"
-            className="w-full h-[54px] pt-[12px] pb-[12px] pl-[20px] bg-gray1 rounded-[8px] focus:outline-none text-gray3 text-[18px] font-pretendard font-medium"
+            className="w-full h-[54px] pt-[12px] pb-[12px] pl-[20px] bg-gray1 rounded-[8px] focus:outline-none text-black placeholder-gray3 text-[18px] font-pretendard font-medium"
           />
           <button
             type="button"
@@ -115,7 +115,7 @@ const SignUpPage: React.FC = () => {
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
             placeholder="비밀번호를 다시 입력해주세요"
-            className="w-full h-[54px] pt-[12px] pb-[12px] pl-[20px] bg-gray1 rounded-[8px] focus:outline-none text-gray3 text-[18px] font-pretendard font-medium"
+            className="w-full h-[54px] pt-[12px] pb-[12px] pl-[20px] bg-gray1 rounded-[8px] focus:outline-none text-black placeholder-gray3 text-[18px] font-pretendard font-medium"
           />
           <button
             type="button"
