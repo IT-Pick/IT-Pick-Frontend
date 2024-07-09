@@ -63,19 +63,19 @@ const SignUpPage: React.FC = () => {
       </h1>
       <div className="mt-9 mb-4">
         <label className="block font-pretendard font-bold text-[16px] text-black ml-8">이메일</label>
-        <div className="relative mx-5">
+        <div className="relative mx-5 mt-2">
           <input
             type="email"
             value={email}
             onChange={handleEmailChange}
             placeholder="이메일을 입력해주세요"
-            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium focus:outline-none"
+            className="w-full h-[54px] pt-[12px] pb-[12px] pl-[20px] bg-gray1 rounded-[8px] focus:outline-none text-black placeholder-gray3 text-[18px] font-pretendard font-medium"
             style={{ appearance: 'none', boxShadow: 'none' }}
           />
           <button
             type="button"
-            className="absolute inset-y-0 right-0 flex items-center justify-center p-2"
-            style={{ background: 'none', border: 'none', width: '73px', height: '28px', marginTop: '12px' }}
+            className="absolute inset-y-0 right-0 flex items-center justify-center"
+            style={{ background: 'none', border: 'none', width: '73px', height: '28px', marginTop: '12px', marginBottom: '14px', marginRight: '12px' }}
             disabled={!isEmailValid}
           >
             <img src={isEmailValid ? certifyAble : certifyUnable} alt="email validation" />
@@ -87,18 +87,18 @@ const SignUpPage: React.FC = () => {
       </div>
       <div className="mb-4">
         <label className="block font-pretendard font-bold text-[16px] text-black ml-8 mt-[39px]">비밀번호</label>
-        <div className="relative mx-5">
+        <div className="relative mx-5 mt-2">
           <input
             type={showPassword ? 'text' : 'password'}
             value={password}
             onChange={handlePasswordChange}
             placeholder="영문, 숫자, 특수문자 포함 8자 이상"
-            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium"
+            className="w-full h-[54px] pt-[12px] pb-[12px] pl-[20px] bg-gray1 rounded-[8px] focus:outline-none text-gray3 text-[18px] font-pretendard font-medium"
           />
           <button
             type="button"
             onClick={handleTogglePasswordVisibility}
-            className="absolute inset-y-0 right-0 px-3 flex items-center text-gray-500"
+            className="absolute inset-y-0 right-0 px-[22px] flex items-center"
           >
             <img src={showPassword ? showIcon : hideIcon} alt="toggle password visibility" />
           </button>
@@ -109,18 +109,18 @@ const SignUpPage: React.FC = () => {
       </div>
       <div className="mb-4">
         <label className="block font-pretendard font-bold text-[16px] text-black ml-8 mt-[39px]">비밀번호 확인</label>
-        <div className="relative mx-5">
+        <div className="relative mx-5 mt-2">
           <input
             type={showConfirmPassword ? 'text' : 'password'}
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
             placeholder="비밀번호를 다시 입력해주세요"
-            className="w-full p-2 border border-gray-300 rounded mt-1 text-[18px] font-pretendard font-medium"
+            className="w-full h-[54px] pt-[12px] pb-[12px] pl-[20px] bg-gray1 rounded-[8px] focus:outline-none text-gray3 text-[18px] font-pretendard font-medium"
           />
           <button
             type="button"
             onClick={handleToggleConfirmPasswordVisibility}
-            className="absolute inset-y-0 right-0 px-3 flex items-center text-gray-500"
+            className="absolute inset-y-0 right-0 px-[22px] flex items-center"
           >
             <img src={showConfirmPassword ? showIcon : hideIcon} alt="toggle password visibility check"/>
           </button>
@@ -130,7 +130,7 @@ const SignUpPage: React.FC = () => {
         )}
       </div>
       <div>
-        <div className="mb-4 mt-[53px] ml-[26px]">
+        <div className="flex items-center justify-between mb-4 mt-[53px] ml-[26px]">
           <label className="flex items-center font-pretendard font-medium text-[14px] text-black">
             <input
               type="checkbox"
@@ -146,8 +146,14 @@ const SignUpPage: React.FC = () => {
             />
             [필수] 만 14세 이상이며 모두 동의합니다.
           </label>
+          <button 
+            type="button"
+            className="text-[14px] text-gray3 font-pretendard font-medium underline ml-2 mr-[22px]"
+          >
+            내용 보기
+          </button>
         </div>
-        <div className="mb-4 mt-[20px] ml-[26px]">
+        <div className="flex items-center justify-between mb-4 mt-[20px] ml-[26px]">
           <label className="flex items-center font-pretendard font-medium text-[14px] text-black">
             <input
               type="checkbox"
@@ -162,7 +168,13 @@ const SignUpPage: React.FC = () => {
               className="cursor-pointer mr-[10px]"
             />
             [선택] 광고성 정보 수신에 모두 동의합니다.
-          </label>
+            </label>
+          <button 
+            type="button"
+            className="text-[14px] text-gray3 font-pretendard font-medium underline ml-2 mr-[22px]"
+          >
+            내용 보기
+          </button>
         </div>
       </div>
       <div className="mx-5 mt-[30px] mb-4">
