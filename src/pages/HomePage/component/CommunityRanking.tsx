@@ -15,7 +15,7 @@ const CommunityRanking: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-md mx-auto p-4">
+    <div className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-lg font-bold">커뮤니티 별 랭킹</h2>
         <span className="text-gray-500">전체보기 &gt;</span>
@@ -26,8 +26,8 @@ const CommunityRanking: React.FC = () => {
           <li key={index} className="flex items-center mb-4">
             <img src={item.icon} alt={item.name} className="w-8 h-8 mr-4" />
             <div className="flex-1">
-              <p className="font-bold">{item.name}</p>
-              <p className="text-gray-500">{item.tag}</p>
+              <p className="font-bold text-[#1D2228] font-pretendard text-[16px] leading-[22.4px]">{item.name}</p>
+              <p className="text-gray-500 text-[#1D2228] font-pretendard text-[16px] leading-[22.4px]">{item.tag}</p>
             </div>
           </li>
         ))}
@@ -37,4 +37,3 @@ const CommunityRanking: React.FC = () => {
 };
 
 export default CommunityRanking;
-
