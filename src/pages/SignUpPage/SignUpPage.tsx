@@ -181,7 +181,7 @@ const SignUpPage: React.FC = () => {
         <button
           className={`w-full h-[48px] py-2 rounded flex items-center justify-center font-pretendard font-bold text-[16px] text-white ${isFormValid ? 'bg-point500' : 'bg-gray2'}`}
           disabled={!isFormValid}
-          style={{ border: 'none', padding: 0 }}
+          style={{ border: 'none', padding: 0, borderRadius: '12px' }}
         >가입하기
         </button>
       </div>
