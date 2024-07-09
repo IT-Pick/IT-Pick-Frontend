@@ -7,13 +7,16 @@ import CommunityRanking from "./component/CommunityRanking";
 const HomePage=()=>{
   return (
     <>
+    <div>
+    <Header/>
       <div className="bg-white flex flex-col items-center w-screen"> {/*background color: white && applied to minimum height */}
-      <Header/>
-      <SearchBar/>
-      <IntegratedRanking/>
-      <LiveDiscussion/>
-      <CommunityRanking/>
+        <SearchBar/>
+        <IntegratedRanking/>
+        <LiveDiscussion/>
+        <CommunityRanking/>
       </div>
+    </div>
+
     </>
   );
 }
