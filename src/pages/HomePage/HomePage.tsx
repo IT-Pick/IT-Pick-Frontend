@@ -2,17 +2,17 @@ import Header from "./component/Header";
 import SearchBar from "./component/SearchBar";
 import IntegratedRanking from "./component/IntegratedRanking";
 import LiveDiscussion from "./component/LiveDiscussion";
-import RankingByCommunity from "./component/RankingByCommunity";
+import CommunityRanking from "./component/CommunityRanking";
 
 const HomePage=()=>{
   return (
     <>
-      <div className="bg-white min-h-screen"> {/*background color: white && applied to minimum height */}
+      <div className="bg-white flex flex-col items-center w-screen"> {/*background color: white && applied to minimum height */}
       <Header/>
       <SearchBar/>
       <IntegratedRanking/>
       <LiveDiscussion/>
-      <RankingByCommunity/>
+      <CommunityRanking/>
       </div>
     </>
   );
