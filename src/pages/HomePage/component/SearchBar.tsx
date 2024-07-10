@@ -14,7 +14,7 @@ const SearchBar: React.FC = () => {
         </div>
       </div>
 
-      <div className="relative flex items-center mt-4 w-full max-w-md ml-[24px] mr-[24px]">
+      <div className="relative flex items-center mt-4  ml-[24px] mr-[24px]">
         <img src={ico_itpick_logo} alt="Logo Icon" className="w-8 h-8 mr-[14.79px]" />
         <input 
           type="text" 
