@@ -18,7 +18,7 @@ const SearchBar: React.FC = () => {
         <img src={ico_itpick_logo} alt="Logo Icon" className="w-8 h-8 mr-[14.79px]" />
         <input 
           type="text" 
-          placeholder="김현주 열애설" 
+          placeholder="김현주 열애설"
           className="pl-4 pr-12 py-2 w-full rounded-full border border-transparent focus:outline-none focus:ring-2 focus:ring-gray-300" 
         />
         <span className="absolute right-4 top-1/2 transform -translate-y-1/2">
