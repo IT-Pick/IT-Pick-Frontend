@@ -7,63 +7,64 @@ import Comment from '../../../assets/images/LiveDiscussion/Comment.svg';
 
 const LiveDiscussion: React.FC = () => {
   return (
-    <div className="flex flex-col justify-start items-center w-screen">
-      <div className="w-full p-5">
-        <h1 className="text-2xl font-bold text-[#2E333B] leading-[28px]">실시간 토론 BEST3</h1>
-        <div className="flex overflow-x-auto space-x-3 mt-[13px]">
-          <div className="min-w-[200px] bg-white rounded-lg p-2 flex-shrink-0 shadow-md">
+    <div className="flex flex-col justify-start items-center">
+      <div className="p-5">
+        <div className="text-gray-800 text-xl font-bold font-['Pretendard'] leading-7 ml-[24px]">실시간 토론 BEST3</div>
+        <div className="flex overflow-x-auto space-x-[12px] mt-[13px]">
+          <div className="p-2 flex-shrink-0">
             <img
               src={LiveDiscussion1}
               alt="LiveDiscussion1"
-              className="w-full h-auto rounded-lg mb-2"
+              className="w-[164px] h-[200px] rounded-lg mb-2"
             />
-            <div className="flex justify-between items-center text-sm text-gray-500 mb-2 px-2">
-              <div className="flex items-center">
-                <img src={Hits} alt="Hits" className="w-4 h-4 mr-1" />
-                <span className="text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px]">1,210</span>
+            <div className="w-[130px] h-6 justify-start items-start gap-2 inline-flex">
+              <div className="w-[65px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-violet-700 text-xs font-medium font-['Pretendard']">1,210</div>
               </div>
-              <div className="flex items-center">
-                <img src={Comment} alt="Comment" className="w-4 h-4 mr-1" />
-                <span className="text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px]">123</span>
+              <div className="w-[57px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-violet-700 text-xs font-medium font-['Pretendard']">123</div>
               </div>
             </div>
             <a href="/Post1" className="block text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px] no-underline text-center mt-2">김현주 열애설 어떻게 생각함?</a>
           </div>
-          <div className="min-w-[200px] bg-white rounded-lg p-2 flex-shrink-0 shadow-md">
+
+          <div className="p-2 flex-shrink-0">
             <img
               src={LiveDiscussion2}
               alt="LiveDiscussion2"
-              className="w-full h-auto rounded-lg mb-2"
+              className="w-[164px] h-[200px] rounded-lg mb-2"
             />
-            <div className="flex justify-between items-center text-sm text-gray-500 mb-2 px-2">
-              <div className="flex items-center">
-                <img src={Hits} alt="Hits" className="w-4 h-4 mr-1" />
-                <span className="text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px]">990</span>
+            <div className="w-[130px] h-6 justify-start items-start gap-2 inline-flex">
+              <div className="w-[65px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-violet-700 text-xs font-medium font-['Pretendard']">990</div>
               </div>
-              <div className="flex items-center">
-                <img src={Comment} alt="Comment" className="w-4 h-4 mr-1" />
-                <span className="text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px]">80</span>
+              <div className="w-[57px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-violet-700 text-xs font-medium font-['Pretendard']">45</div>
               </div>
             </div>
             <a href="/Post2" className="block text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px] no-underline text-center mt-2">김현주가 아깝다 vs 차은우가 아깝다</a>
           </div>
-          <div className="min-w-[200px] bg-white rounded-lg p-2 flex-shrink-0 shadow-md">
+          <div className="p-2 flex-shrink-0">
             <img
               src={LiveDiscussion3}
               alt="LiveDiscussion3"
-              className="w-full h-auto rounded-lg mb-2"
+              className="w-[164px] h-[200px] rounded-lg mb-2"
             />
-            <div className="flex justify-between items-center text-sm text-gray-500 mb-2 px-2">
-              <div className="flex items-center">
-                <img src={Hits} alt="Hits" className="w-4 h-4 mr-1" />
-                <span className="text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px]">338</span>
+            <div className="w-[130px] h-6 justify-start items-start gap-2 inline-flex">
+              <div className="w-[65px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-violet-700 text-xs font-medium font-['Pretendard']">990</div>
               </div>
-              <div className="flex items-center">
-                <img src={Comment} alt="Comment" className="w-4 h-4 mr-1" />
-                <span className="text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px]">45</span>
+              <div className="w-[57px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
+                <div className="w-4 h-4 relative" />
+                <div className="text-violet-700 text-xs font-medium font-['Pretendard']">45</div>
               </div>
             </div>
-            <a href="/LovelyPM" className="block text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px] no-underline text-center mt-2">뉴진스! 뉴진스!</a>
+            <a href="/Post3" className="block text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px] no-underline text-center mt-2">김현주가 아깝다 vs 차은우가 아깝다</a>
           </div>
         </div>
       </div>

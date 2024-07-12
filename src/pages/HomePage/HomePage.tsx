@@ -6,7 +6,7 @@ import CommunityRanking from "./component/CommunityRanking";
 
 const HomePage = () => {
   return (
-    <div className="bg-[#F8F9FC]">
+    <div className="bg-[#F8F9FC] w-[390px] mx-auto">
       <Header />
       <SearchBar />
       <IntegratedRanking />
