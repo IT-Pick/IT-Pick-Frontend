@@ -16,7 +16,7 @@ const rankings = [
 
 const CommunityRanking: React.FC = () => {
   return (
-    <div className=" mt-[44px] ">
+    <div className=" mt-[44px]  mb-[33px]">
       <span className='ml-[24px]'>
         <span className="text-[#2E333B] font-pretendard text-[20px] font-bold leading-normal">커뮤니티 별 랭킹</span>
         <span className="text-xs text-gray-500 ml-[8px]">4월 1일 18:00 기준</span>
