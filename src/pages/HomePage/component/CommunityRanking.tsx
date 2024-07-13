@@ -1,4 +1,5 @@
 import React from 'react';
+import tag_ico_right from "../../../assets/images/16x16/tag_ico_right.svg";
 import namuwiki from '../../../assets/images/CommunityLogo/namuwiki.svg';
 import twitter from '../../../assets/images/CommunityLogo/twitter.svg';
 import dcinside from '../../../assets/images/CommunityLogo/dcinside.svg';
@@ -15,19 +16,25 @@ const rankings = [
 
 const CommunityRanking: React.FC = () => {
   return (
-    <div className="items-start pt-10 px-4 ml-[24px]">
-      <div className="">
-        <span className="text-[#2E333B] font-pretendard text-[20px] font-bold leading-normal">통합 랭킹</span>
+    <div className=" mt-[44px] ">
+      <span className='ml-[24px]'>
+        <span className="text-[#2E333B] font-pretendard text-[20px] font-bold leading-normal">커뮤니티 별 랭킹</span>
         <span className="text-xs text-gray-500 ml-[8px]">4월 1일 18:00 기준</span>
-      </div>
+      </span>
+      <span className="ml-[43px]">
+        <div className="inline-flex items-center justify-start">
+          <span className="w-[50px] h-5 text-right text-gray-400 text-sm font-medium font-['Pretendard']">랭킹보기</span>
+          <img src={tag_ico_right} alt="tag_ico_right" />
+        </div>
+      </span>
 
-      <ul className="mt-4 space-y-4">
+      <ul className="ml-[24px] mt-[24px] space-y-4">
         {rankings.map((item, index) => (
-          <li key={index} className="flex items-center mb-4">
-            <img src={item.icon} alt={item.name} className="w-8 h-8 mr-4" />
-            <div className="flex-1">
-              <span className="font-bold text-[#1D2228] font-pretendard text-[16px] leading-[22.4px]">{item.name}</span>
-              <span className="text-gray5 font-pretendard text-[16px] mr-[28px] ">{item.tag}</span>
+          <li key={index} className="flex mb-4">
+            <img src={item.icon} alt={item.name} className="mr-4" />
+            <div className="ml-[12px] flex justify-between w-full">
+              <span className="font-bold text-[#1D2228] font-pretendard text-[16px]">{item.name}</span>
+              <span className="text-gray-500 text-[16px] font-pretendard mr-[24px]">{item.tag}</span>
             </div>
           </li>
         ))}
