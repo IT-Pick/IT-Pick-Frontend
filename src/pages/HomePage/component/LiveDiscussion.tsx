@@ -46,7 +46,7 @@ const DiscussionCard = ({ image, hits, comments, title, link }) => (
 
 const LiveDiscussion: React.FC = () => {
   return (
-    <div className="">
+    <div className="mt-[44px] ml-[24px]">
       <div className="flex items-center">
         <span className="text-[#2E333B] font-pretendard text-[20px] font-bold leading-normal">실시간 토론 BEST 3</span>
       </div>
