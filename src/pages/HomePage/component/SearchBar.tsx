@@ -1,6 +1,5 @@
 import React from 'react';
 import ico_search from "../../../assets/images/ico_search.svg";
-import ico_itpick_logo from "../../../assets/images/ico_itpick_logo.svg";
 import logo from "../../../assets/images/etc/logo.png";
 const SearchBar: React.FC = () => {
   return (
