@@ -1,7 +1,7 @@
 import React from 'react';
 import ico_search from "../../../assets/images/ico_search.svg";
 import ico_itpick_logo from "../../../assets/images/ico_itpick_logo.svg";
-
+import logo from "../../../assets/images/etc/logo.png";
 const SearchBar: React.FC = () => {
   return (
     <div className="flex flex-col justify-start">
@@ -15,7 +15,7 @@ const SearchBar: React.FC = () => {
       </div>
 
       <div className="relative flex items-center mt-4  ml-[24px] mr-[24px]">
-        <img src={ico_itpick_logo} alt="Logo Icon" className="w-8 h-8 mr-[14.79px]" />
+        <img src={logo} alt="Logo Icon" className="w-8 h-8 mr-[14.79px]" />
         <input 
           type="text" 
           placeholder="김현주 열애설"
