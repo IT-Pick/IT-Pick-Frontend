@@ -20,16 +20,22 @@ module.exports = {
         'pretendard': ['Pretendard', 'sans-serif']
       },
       colors: {
-        'black': '#1D2228',
-        'white': '#FFFFFF',
-        'gray1': '#EDF0F3',
-        'gray3': '#9EAAB5',
-        'point500': '#7620E4',
         'point100': '#F1E6FF',
-        'errorpoint': '#FF4A4A'
+        'point200': '#D6B8FB',
+        'point300': '#BA8CF5',
+        'point400': '#914CE9',
+        'point500': '#7620E4',
+        'errorpoint': '#FF4A4A',
+        'white': '#FFFFFF',
+        'background': '#F8F9FC',
+        'gray1': '#EDF0F3',
+        'gray2' : '#CED5DB',
+        'gray3': '#9EAAB5',
+        'gray4': '#797F85',
+        'gray5': '#464F59',
+        'black': '#1D2228',
       },
     },
   },
   plugins: [],
 }
-
