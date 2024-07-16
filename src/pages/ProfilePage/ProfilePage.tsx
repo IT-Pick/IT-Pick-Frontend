@@ -5,6 +5,7 @@ const Profile: React.FC = () => {
   const [nickname, setNickname] = useState('');
   const [birthdate, setBirthdate] = useState('');
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [birthdateError, setBirthdateError] = useState(false);
   const birthdateRef = useRef<HTMLInputElement>(null);
   const keypadRef = useRef<HTMLDivElement>(null);
 
@@ -25,6 +26,11 @@ const Profile: React.FC = () => {
         !keypadRef.current.contains(event.target as Node)
       ) {
         setIsKeyboardVisible(false);
+        if (birthdate.length !== 8) {
+          setBirthdateError(true);
+        } else {
+          setBirthdateError(false);
+        }
       }
     };
 
@@ -32,7 +38,7 @@ const Profile: React.FC = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [birthdate]);
 
   const isFormValid = nickname.length > 0 && birthdate.length === 8;
 
@@ -52,7 +58,7 @@ const Profile: React.FC = () => {
               id="nickname"
               value={nickname}
               onChange={handleNicknameChange}
-              className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] bg-[#F8F9FC] rounded-[8px] focus:outline-none text-[#9EAAB5]"
+              className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] text-[black] font-[500] bg-[#F8F9FC] rounded-[8px] focus:outline-none"
               placeholder="닉네임을 입력해주세요 (10자 이하)"
             />
           </div>
@@ -68,9 +74,14 @@ const Profile: React.FC = () => {
               ref={birthdateRef}
               onFocus={() => setIsKeyboardVisible(true)}
               readOnly
-              className=" w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] bg-[#F8F9FC] rounded-[8px] focus:outline-none text-[#9EAAB5]"
+              className=" w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[black] font-[500] text-[18px] bg-[#F8F9FC] rounded-[8px] focus:outline-none"
               placeholder="8자리 숫자로 입력해주세요"
             />
+            {birthdateError && (
+              <span className="text-red-500 text-[14px]">
+                생년월일을 확인해주세요.
+              </span>
+            )}
           </div>
 
           <button
