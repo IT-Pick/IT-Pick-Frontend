@@ -43,7 +43,7 @@ const Profile: React.FC = () => {
   const isFormValid = nickname.length > 0 && birthdate.length === 8;
 
   return (
-    <div className="flex w-[390px] h-[800px] mt-[70px] justify-center min-h-screen">
+    <div className="flex w-[390px] h-[800px] mt-[70px] justify-center min-h-screen mx-auto">
       <div className="w-full max-w-md p-[20px] rounded-lg">
         <h1 className="text-[24px] font-[700] mb-[52px]">
           <div>잇픽에 필요한</div>{' '}
@@ -95,7 +95,7 @@ const Profile: React.FC = () => {
           >
             다음으로
           </button>
-
+            
           {isKeyboardVisible && (
             <div ref={keypadRef}>
               <Inputter value={birthdate} onChange={handleBirthdateChange} />

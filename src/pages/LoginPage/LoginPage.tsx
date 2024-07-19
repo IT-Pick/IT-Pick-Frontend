@@ -23,7 +23,7 @@ const Login: React.FC = () => {
     const isFormValid = email.length > 0 && password.length > 0;
 
     return (
-        <div className="flex w-[390px] h-[800px] mt-[70px] justify-center min-h-screen">
+        <div className="flex w-[390px] h-[800px] mt-[70px] justify-center min-h-screen mx-auto">
             <div className="w-full max-w-md p-8 rounded-lg">
                 <h1 className="text-[24px] font-[700] mb-[52px]">
                     <div>안녕하세요 :)</div>

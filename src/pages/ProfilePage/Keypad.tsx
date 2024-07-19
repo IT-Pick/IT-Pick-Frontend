@@ -39,7 +39,7 @@ const Inputter: React.FC<InputterProps> = ({ value, onChange }) => {
   }, [onChange]);
 
   return (
-    <div className="absolute flex flex-col justify-center items-between bottom-0 left-0 w-[390px] h-[300px] p-4 bg-white">
+      <div className="absolute flex flex-col justify-center items-between bottom-0 w-[352px] h-[300px] mx-auto p-4 bg-white">
       <div className="grid grid-cols-3 mb-3 ">
         {nums.slice(0, 9).map((n, i) => (
           <button
@@ -82,6 +82,7 @@ const Inputter: React.FC<InputterProps> = ({ value, onChange }) => {
         </button>
       </div>
     </div>
+    
   );
 };
 
