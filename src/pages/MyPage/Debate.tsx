@@ -4,7 +4,14 @@ import tag_ico_view from "../../assets/images/16x16/tag_ico_view.svg"
 import ico_roundcheck from "../../assets/images/24x24/ico_roundcheck_filled.svg"
 import ico_rounduncheck from "../../assets/images/24x24/ico_roundcheck_outline.svg"
 
-const myMadeDebates = [
+interface Debates {
+    id: number;
+  title: string;
+  about: string;
+  tags: number[],
+  time: number
+}
+const Debates = [
     { id: 1, title: '김현주', about: "김현주 열애설", tags: [3025, 123], time: 30 },
     { id: 2, title: '김현주 열애설', about: "김현주 열애설", tags: [123, 18], time: 30 },
     { id: 3, title: '여러분 뉴진스 최애는?', about: "김현주 열애설", tags: [567, 398], time: 30 },
@@ -32,28 +39,25 @@ const SortingDebates = ({ id, title, about, tags, time, editMode, selectedItems,
             </div>
         </div>
         <div className="flex items-center gap-[8px]">
-            {tags[0] && (
-                <div className="flex items-center gap-[4px] bg-purple-100 rounded-2xl px-2 py-1 text-xs text-violet-700 font-medium">
-                    <img src={tag_ico_view} alt="tag_ico_view"/>
-                    {formatNumber(tags[0])}
-                </div>
-            )}
-            {tags[1] && (
-                <div className="flex items-center gap-[4px] bg-purple-100 rounded-2xl px-2 py-1 text-xs text-violet-700 font-medium">
-                    <img src={tag_ico_comment} alt="tag_ico_comment" />
-                    {formatNumber(tags[1])}
-                </div>
-            )}
-        </div>
+  {tags.map((tag, index) => (
+    tag != null && (
+      <div key={index} className="flex items-center gap-[4px] bg-purple-100 rounded-2xl px-2 py-1 text-xs text-violet-700 font-medium">
+        {index === 0 && <img src={tag_ico_view} alt="tag_ico_view" />}
+        {index === 1 && <img src={tag_ico_comment} alt="tag_ico_comment" />}
+        {formatNumber(tag)}
+      </div>
+    )
+  ))}
+</div>
     </div>
 );
 
-const DebateMade = () => {
-    const [editMode, setEditMode] = useState(false);
+const Debate = () => {
+    const [isEditMode, setIsEditMode] = useState(false);
     const [selectedItems, setSelectedItems] = useState([]);
 
     const toggleEditMode = () => {
-        setEditMode(!editMode);
+        setIsEditMode(!isEditMode);
         setSelectedItems([]);
     };
 
@@ -68,14 +72,14 @@ const DebateMade = () => {
             <header className="w-full flex justify-between items-center py-4">
                 <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] ml-6">내가 만든 토론</h1>
                 <p onClick={toggleEditMode} className="text-[#914CE9] text-[14px] font-[500] mr-[24px] cursor-pointer">
-                    {editMode ? '삭제' : '편집'}
+                    {isEditMode ? '삭제' : '편집'}
                 </p>
             </header>
-            {myMadeDebates.map((item) => (
+            {Debates.map((item) => (
                 <SortingDebates 
                     key={item.id} 
                     {...item} 
-                    editMode={editMode} 
+                    editMode={isEditMode} 
                     selectedItems={selectedItems} 
                     toggleSelect={toggleSelect} 
                 />
@@ -84,4 +88,4 @@ const DebateMade = () => {
     );
 }
 
-export default DebateMade;
+export default Debate;
