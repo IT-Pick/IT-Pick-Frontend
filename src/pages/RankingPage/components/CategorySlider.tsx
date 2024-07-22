@@ -6,7 +6,7 @@ const CategorySlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex overflow-x-auto whitespace-nowrap bg-gray-100 p-4 mt-6">
+    <div className="flex overflow-x-auto whitespace-nowrap bg-background p-4 mt-6">
       {categories.map((category, index) => (
         <div
           key={index}

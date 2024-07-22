@@ -15,7 +15,7 @@ const TrendItem: React.FC<TrendItemProps> = ({ rank, name, tags }) => {
       </div>
       <div className=" space-x-2">
         {tags.map((tag, index) => (
-          <span key={index} className="px-2 py-1 bg-purple-100 rounded-2xl text-xs text-violet-700 font-medium">
+          <span key={index} className="ml-[22px] px-2 py-1 bg-purple-100 rounded-2xl text-xs text-violet-700 font-medium">
             {tag}
           </span>
         ))}

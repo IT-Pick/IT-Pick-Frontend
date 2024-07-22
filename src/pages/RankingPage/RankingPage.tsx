@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import CategorySlider from './components/CategorySlider';
 import TrendList from './components/TrendList';
 import { useTrendStore } from '../../store/trendStore';
+import MenuSelector from './components/MenuSelector';
 
 const RankingPage: React.FC = () => {
   const { menuType, setMenuType, date, setDate, fetchTrends } = useTrendStore();
@@ -22,26 +23,7 @@ const RankingPage: React.FC = () => {
 
   return (
     <div className="bg-background w-[390px] mx-auto">
-      <header className="p-4 bg-gray-100 flex justify-between">
-        <button
-          className={`px-4 py-2 ${menuType === 'realTime' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'} rounded`}
-          onClick={() => setMenuType('realTime')}
-        >
-          실시간
-        </button>
-        <button
-          className={`px-4 py-2 ${menuType === 'daily' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'} rounded`}
-          onClick={() => setMenuType('daily')}
-        >
-          일간
-        </button>
-        <button
-          className={`px-4 py-2 ${menuType === 'weekly' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'} rounded`}
-          onClick={() => setMenuType('weekly')}
-        >
-          주간
-        </button>
-      </header>
+      <MenuSelector menuType={menuType} setMenuType={setMenuType} />
       <CategorySlider />
       {menuType !== 'realTime' && (
         <div className="flex justify-between items-center my-4">
