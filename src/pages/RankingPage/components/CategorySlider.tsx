@@ -10,7 +10,7 @@ const CategorySlider: React.FC = () => {
       {categories.map((category, index) => (
         <div
           key={index}
-          className={`px-4 py-2 rounded-full cursor-pointer text-sm border ${index === activeIndex ? 'bg-red-500 text-white border-red-500' : 'bg-white text-gray-800 border-gray-300'} transition-all duration-300 mx-2`}
+          className={`px-4 py-2 rounded-full cursor-pointer text-sm border ${index === activeIndex ? 'bg-violet-700 text-white' : 'bg-white text-gray-800 border-gray-300'} transition-all duration-300 mx-2`}
           onClick={() => setActiveIndex(index)}
         >
           {category}

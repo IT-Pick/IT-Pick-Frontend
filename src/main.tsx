@@ -13,12 +13,12 @@ import RankingPage from './pages/RankingPage/RankingPage';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-    <RankingPage/>
     <Profile/>
     <Login/>
     <Debate/>
     <ParticipatedDebates/>
     <HomePage/>
+    <RankingPage/>
     <SignUpPage />
     </BrowserRouter>
   </React.StrictMode>

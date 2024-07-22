@@ -21,7 +21,7 @@ const RankingPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="bg-background w-[390px] mx-auto">
       <header className="p-4 bg-gray-100 flex justify-between">
         <button
           className={`px-4 py-2 ${menuType === 'realTime' ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'} rounded`}
@@ -42,6 +42,7 @@ const RankingPage: React.FC = () => {
           주간
         </button>
       </header>
+      <CategorySlider />
       {menuType !== 'realTime' && (
         <div className="flex justify-between items-center my-4">
           <button onClick={() => handleDateChange('prev')}>&lt;</button>
@@ -50,7 +51,6 @@ const RankingPage: React.FC = () => {
         </div>
       )}
       <main className="container mx-auto p-4">
-        <CategorySlider />
         <TrendList />
       </main>
     </div>
