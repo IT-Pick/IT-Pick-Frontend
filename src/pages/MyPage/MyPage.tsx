@@ -4,7 +4,7 @@ import profile from '../../assets/images/ic_profile.svg';
 
 const MyPage: React.FC = () => {
     return (
-        <div className="flex flex-col items-center mx-auto">
+        <div className="w-[390px] flex flex-col items-center mx-auto">
             <header className="w-full flex justify-between items-center py-4">
             <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] ml-6">마이페이지</h1>
               <button className="mr-6"><img src={alarm} alt="alarm_icon"/></button>
