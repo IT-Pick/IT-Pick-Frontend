@@ -8,17 +8,17 @@ import Login from './pages/LoginPage/LoginPage';
 import Profile from './pages/ProfilePage/ProfilePage';
 import ParticipatedDebates from './pages/MyPage/ParticipatedDebate';
 import Debate from './pages/MyPage/Debate';
-import PwdChange from './pages/MyPage/PwdChangePage';
+import RankingPage from './pages/RankingPage/RankingPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-    <PwdChange />
     <Profile/>
     <Login/>
     <Debate/>
     <ParticipatedDebates/>
     <HomePage/>
+    <RankingPage/>
     <SignUpPage />
     </BrowserRouter>
   </React.StrictMode>
