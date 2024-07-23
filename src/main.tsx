@@ -6,9 +6,10 @@ import HomePage from './pages/HomePage/HomePage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import Login from './pages/LoginPage/LoginPage';
 import Profile from './pages/ProfilePage/ProfilePage';
-import ParticipatedDebates from './pages/MyPage/ParticipatedDebate';
-import Debate from './pages/MyPage/Debate';
+import ParticipatedDebates from './pages/HistoryPage/ParticipatedDebate';
+import Debate from './pages/HistoryPage/Debate';
 import RankingPage from './pages/RankingPage/RankingPage';
+import PwdChangePage from './pages/ChangeInfoPage/PwdChangePage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <HomePage/>
     <RankingPage/>
     <SignUpPage />
+    <PwdChangePage />
     </BrowserRouter>
   </React.StrictMode>
 );
