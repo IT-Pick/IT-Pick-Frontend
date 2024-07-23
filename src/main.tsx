@@ -8,7 +8,7 @@ import Login from './pages/LoginPage/LoginPage';
 import Profile from './pages/ProfilePage/ProfilePage';
 import ParticipatedDebates from './pages/MyPage/ParticipatedDebate';
 import Debate from './pages/MyPage/Debate';
-import MyPage from './pages/MyPage/MyPage';
+import RankingPage from './pages/RankingPage/RankingPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -18,8 +18,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Debate/>
     <ParticipatedDebates/>
     <HomePage/>
+    <RankingPage/>
     <SignUpPage />
-    <MyPage />
     </BrowserRouter>
   </React.StrictMode>
 );
