@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import ProfileEditPage from './pages/ProfilePage/ProfileEditPage';
+import ProfileEditPage from './pages/MyPage/ProfileEditPage';
 import HomePage from './pages/HomePage/HomePage';
 import MyPage from './pages/MyPage/MyPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
