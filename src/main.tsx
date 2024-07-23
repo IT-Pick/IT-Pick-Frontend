@@ -8,10 +8,12 @@ import Login from './pages/LoginPage/LoginPage';
 import Profile from './pages/ProfilePage/ProfilePage';
 import ParticipatedDebates from './pages/MyPage/ParticipatedDebate';
 import Debate from './pages/MyPage/Debate';
+import PwdChange from './pages/MyPage/PwdChangePage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
+    <PwdChange />
     <Profile/>
     <Login/>
     <Debate/>
