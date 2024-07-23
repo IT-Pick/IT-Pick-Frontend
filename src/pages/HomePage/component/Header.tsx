@@ -6,13 +6,13 @@ import ico_mypage from "../../../assets/images/ico_mypage.svg";
 const Header: React.FC = () => {
   const navigate = useNavigate();
   // 여기에 실제 로그인 상태를 확인하는 로직을 추가해야 함
-  const isLoggedIn = false; 
-  //const isLoggedIn = true;
+  // const isLoggedIn = false; 
+  const isLoggedIn = true;
 
 
   const handleProfileClick = () => {
     if (isLoggedIn) {
-      navigate('/signin');
+      navigate('/signup');
     } else {
       navigate('/my-page');
     }
