@@ -57,7 +57,7 @@ const SignUpPage: React.FC = () => {
   const isFormValid = isEmailValid && isPasswordValid && password === confirmPassword && agreeToTerms;
 
   return (
-    <div className="w-full mx-auto pt-[72px]">
+    <div className="w-[390px] mx-auto pt-[72px]">
       <h1 className="text-2xl font-pretendard font-bold ml-6">
         <span className="text-point500">회원가입</span>을 위한<br />정보를 입력해주세요.
       </h1>
