@@ -8,6 +8,7 @@ import Login from './pages/LoginPage/LoginPage';
 import Profile from './pages/ProfilePage/ProfilePage';
 import ParticipatedDebates from './pages/MyPage/ParticipatedDebate';
 import Debate from './pages/MyPage/Debate';
+import MyPage from './pages/MyPage/MyPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <ParticipatedDebates/>
     <HomePage/>
     <SignUpPage />
+    <MyPage />
     </BrowserRouter>
   </React.StrictMode>
 );
