@@ -12,6 +12,7 @@ import RankingPage from './pages/RankingPage/RankingPage';
 import PwdChangePage from './pages/ChangeInfoPage/PwdChangePage';
 import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
+import NewSetProfile from './pages/SetProfile/NewSetProfile';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -20,6 +21,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/set-profile" element={<SetProfile />} />
+        <Route path="/new-set-profile" element={<NewSetProfile />} />
+
         <Route path="/participated-debates" element={<ParticipatedDebatesPage />} />
         <Route path="/debate" element={<DebatePage />} />
         <Route path="/ranking" element={<RankingPage />} />
