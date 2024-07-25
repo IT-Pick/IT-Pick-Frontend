@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import hideIcon from '../../assets/images/ic_icon_hide.svg';
 import showIcon from '../../assets/images/ic_icon_show.svg';
 
-const SignUpPage: React.FC = () => {
+const PwdChangePage: React.FC = () => {
   const [currentPassword, setCurrentPassword] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -119,4 +119,4 @@ const SignUpPage: React.FC = () => {
   );
 };
 
-export default SignUpPage;
+export default PwdChangePage;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import profile from '../../assets/images/ico_profile_edit.svg';
 
-const MyPage: React.FC = () => {
+const ProfileEditPage: React.FC = () => {
     const [name, setName] = useState('김잇픽');
     const navigate = useNavigate();
 
@@ -65,4 +65,4 @@ const MyPage: React.FC = () => {
     );
 };
 
-export default MyPage;
+export default ProfileEditPage;

@@ -7,7 +7,7 @@ import checked from '../../assets/images/ic_checkbox_checked.svg';
 import hideIcon from '../../assets/images/ic_icon_hide.svg';
 import showIcon from '../../assets/images/ic_icon_show.svg';
 
-const SignUpPage: React.FC = () => {
+const SetProfile: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [password, setPassword] = useState('');
@@ -198,4 +198,4 @@ const SignUpPage: React.FC = () => {
   );
 };
 
-export default SignUpPage;
+export default SetProfile;
