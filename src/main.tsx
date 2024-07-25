@@ -14,7 +14,7 @@ import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -32,5 +32,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
