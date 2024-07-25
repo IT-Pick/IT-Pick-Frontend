@@ -12,9 +12,9 @@ const Header: React.FC = () => {
 
   const handleProfileClick = () => {
     if (isLoggedIn) {
-      navigate('/signup');
-    } else {
       navigate('/my-page');
+    } else {
+      navigate('/signup');
     }
   };
 
