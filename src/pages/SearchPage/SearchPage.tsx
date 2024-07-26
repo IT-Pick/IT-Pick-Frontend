@@ -8,7 +8,7 @@ import LiveDiscussion3 from '../../assets/images/LiveDiscussion/LiveDiscussion3.
 interface DiscussionCardProps {
   image: string;
   hits: number;
-  comments: number;
+  comments: number | null;
   title: string;
   link: string;
 }
@@ -24,45 +24,54 @@ const discussions: DiscussionCardProps[] = [
   {
     image: LiveDiscussion2,
     hits: 990,
-    comments: 45,
+    comments: null,
     title: "김현주가 아깝다 vs 차은우가 아깝다",
     link: "/Post2",
   },
   {
     image: LiveDiscussion3,
-    hits: 990,
-    comments: 45,
-    title: "김현주가 아깝다 vs 차은우가 아깝다",
+    hits: 1210,
+    comments: 123,
+    title: "현주씨 오늘 저녁 뭐 드셨어요",
     link: "/Post3",
   },
   {
-    image: LiveDiscussion3,
-    hits: 990,
-    comments: 45,
-    title: "현주씨 오늘 저녁 뭐 드셨어요",
+    image: LiveDiscussion1,
+    hits: 1210,
+    comments: 123,
+    title: "뉴진스! 뉴진스!",
     link: "/Post4",
   },
   {
-    image: LiveDiscussion3,
-    hits: 990,
-    comments: 45,
-    title: "뉴진스! 뉴진스!",
+    image: LiveDiscussion2,
+    hits: 1210,
+    comments: 123,
+    title: "현주씨 오늘 저녁 뭐 드셨어요",
     link: "/Post5",
+  },
+  {
+    image: LiveDiscussion3,
+    hits: 1210,
+    comments: 123,
+    title: "김현주 열애설 어떻게 생각함?",
+    link: "/Post6",
   },
 ];
 
 const DiscussionCard: React.FC<DiscussionCardProps> = ({ image, hits, comments, title, link }) => (
-  <div className="p-2">
-    <img src={image} alt={title} className="w-full h-[200px] rounded-lg mb-2" />
+  <div className="font-pretendard">
+    <img src={image} alt={title} className="rounded-2xl mb-2" />
     <div className="flex justify-start items-center gap-2 mb-2">
-      <div className="bg-purple-100 rounded-2xl px-2 py-1 flex items-center">
-        <span className="text-violet-700 text-xs font-medium">{hits}</span>
+      <div className="bg-point100 rounded-2xl px-2 py-1 flex items-center">
+        <span className="text-point500 text-[12px] font-medium">{hits}</span>
       </div>
-      <div className="bg-purple-100 rounded-2xl px-2 py-1 flex items-center">
-        <span className="text-violet-700 text-xs font-medium">{comments}</span>
-      </div>
+      {comments !== null && (
+        <div className="bg-point100 rounded-2xl px-2 py-1 flex items-center">
+          <span className="text-point500 text-[12px] font-medium">{comments}</span>
+        </div>
+      )}
     </div>
-    <a href={link} className="block text-[#1D2228] font-bold text-[16px] leading-[22.4px] no-underline text-center">
+    <a href={link} className="text-black font-bold text-[16px] text-left">
       {title}
     </a>
   </div>
@@ -111,7 +120,7 @@ const SearchPage: React.FC = () => {
         </button>
       </div>
 
-      <div className="mt-9 mb-4">
+      <div className="mt-6 mb-4">
         <div className="flex justify-between items-center mb-2">
           <label className="block font-pretendard font-bold text-[14px] text-gray3 ml-8">최근 검색어</label>
           <button 
@@ -164,7 +173,7 @@ const SearchPage: React.FC = () => {
         <div className="flex justify-between items-center">
           <label className="block font-pretendard font-bold text-[14px] text-gray3 ml-8">최근 본 토론</label>
         </div>
-        <div className="grid grid-cols-2 gap-4 ml-8 mr-8">
+        <div className="grid grid-cols-2 gap-4 mt-3 ml-8 mr-8">
           {discussions.map((discussion, index) => (
             <DiscussionCard key={index} {...discussion} />
           ))}
