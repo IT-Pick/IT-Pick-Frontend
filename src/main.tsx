@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/set-profile" element={<SetProfile />} />
+        {/* <Route path="/set-profile" element={<SetProfile />} /> */}
         <Route path="/new-set-profile" element={<NewSetProfile />} />
 
         <Route path="/participated-debates" element={<ParticipatedDebatesPage />} />
