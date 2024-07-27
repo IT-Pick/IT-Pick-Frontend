@@ -60,7 +60,7 @@ const SetProfile: React.FC = () => {
 
   const handleSignUpClick = () => {
     if (isFormValid) {
-      navigate('/set-profile');
+      navigate('/new-set-profile');
     }
   };
 
