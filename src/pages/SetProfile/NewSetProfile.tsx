@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Inputter from './Keypad';
 
-const Profile: React.FC = () => {
+const NewSetProfile: React.FC = () => {
   const [nickname, setNickname] = useState('');
   const [birthdate, setBirthdate] = useState('');
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
@@ -95,7 +95,7 @@ const Profile: React.FC = () => {
           >
             다음으로
           </button>
-            
+
           {isKeyboardVisible && (
             <div ref={keypadRef}>
               <Inputter value={birthdate} onChange={handleBirthdateChange} />
@@ -107,4 +107,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default NewSetProfile;

@@ -1,6 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import tag_ico_right from "../../../assets/images/16x16/tag_ico_right.svg";
-
 
 const rankingData = [
   { rank: 1, name: '김현주', tags: ['나무위키 1등', '트위터 1등'] },
@@ -28,20 +28,26 @@ const RankingItem = ({ rank, name, tags }) => (
 );
 
 const IntegratedRanking: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleRankingClick = () => {
+    navigate('/ranking');
+  };
+
   return (
     <div className="flex flex-col items-start pt-10 ml-[24px]">
-      <div className="flex justify-between items-center w-full mb-[#16px]">
+      <div className="flex justify-between items-center w-full mb-[16px]">
         <div className="flex items-center">
           <span className="text-[#2E333B] font-pretendard text-[20px] font-bold leading-normal">통합 랭킹</span>
           <span className="text-xs text-gray-500 ml-[8px]">4월 1일 18:00 기준</span>
         </div>
-        <span className="ml-[43px]">
-        <div className="inline-flex items-center justify-start mr-[24px]">
-          <span className="w-[50px] h-5 text-right text-gray-400 text-sm font-medium font-['Pretendard'] ">랭킹보기</span>
-          <img src={tag_ico_right} alt="tag_ico_right" />
-        </div>
-      </span>
-    </div>
+        <span className="ml-[43px] cursor-pointer" onClick={handleRankingClick}>
+          <div className="inline-flex items-center justify-start mr-[24px]">
+            <span className="w-[50px] h-5 text-right text-gray-400 text-sm font-medium font-['Pretendard']">랭킹보기</span>
+            <img src={tag_ico_right} alt="tag_ico_right" />
+          </div>
+        </span>
+      </div>
       <div className="w-full flex flex-col gap-4 mt-[16px]">
         {rankingData.map((item) => (
           <RankingItem key={item.rank} {...item} />
