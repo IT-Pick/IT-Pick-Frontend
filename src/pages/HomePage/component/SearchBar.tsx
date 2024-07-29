@@ -1,15 +1,12 @@
 import React from 'react';
 import ico_search from "../../../assets/images/ico_search.svg";
 import logo from "../../../assets/images/etc/logo.png";
+
 const SearchBar: React.FC = () => {
   return (
     <div className="flex flex-col justify-start">
       <div className="mb-4 flex flex-col items-start">
         <div className="text-[#2E333B] font-pretendard text-[20px] font-bold ml-[24px]">
-          <span className="block">현주님,</span>
-          <span className="block">
-            오늘의 <span className="text-[#7620E4]">연예</span> 소식을 확인해보세요!
-          </span>
         </div>
       </div>
 

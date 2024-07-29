@@ -9,7 +9,6 @@ const Header: React.FC = () => {
   // const isLoggedIn = false; 
   const isLoggedIn = true;
 
-
   const handleProfileClick = () => {
     if (isLoggedIn) {
       navigate('/my-page');
