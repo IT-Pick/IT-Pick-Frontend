@@ -20,10 +20,6 @@ interface NoDebateProps {
 const ExceptionPage: React.FC<NoDebateProps> = ({ id }) => {
   const exception = Exception.find((item) => item.id === id);
 
-  if (!exception) {
-    return <div>해당 아이디에 대한 데이터가 없습니다.</div>;
-  }
-
   return (
     <div className=" w-[390px] h-[800px] mx-auto flex flex-col">
       <header className="w-full flex justify-between items-center py-4">
