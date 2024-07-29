@@ -34,10 +34,10 @@ const DiscussionCard = ({ image, hits, comments, title, link }) => (
     <img src={image} alt={title} className="w-[164px] h-[200px] rounded-lg mb-2" />
     <div className="w-[130px] h-6 justify-start items-start gap-2 inline-flex">
       <div className="w-[65px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
-        <div className="text-violet-700 text-xs font-medium font-['Pretendard']"><img src={tag_ico_view} alt='tag_ico_view'/>{hits}</div>
+        <div className="flex flex-row gap-[4px] text-violet-700 text-xs font-medium font-['Pretendard']"><img src={tag_ico_view} alt='tag_ico_view'/>{hits}</div>
       </div>
       <div className="w-[57px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
-        <div className="text-violet-700 text-xs font-medium font-['Pretendard']"><img src={tag_ico_comment} alt='tag_ico_view'/>{comments}</div>
+        <div className="flex flex-row gap-[4px] text-violet-700 text-xs font-medium font-['Pretendard']"><img src={tag_ico_comment} width={16} height={16} alt='tag_ico_view'/>{comments}</div>
       </div>
     </div>
     <a href={link} className="block text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px] no-underline text-center mt-2">
