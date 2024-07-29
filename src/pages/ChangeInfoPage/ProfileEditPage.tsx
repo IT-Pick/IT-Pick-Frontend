@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import profile from '../../assets/images/ico_profile_edit.svg';
 
-const MyPage: React.FC = () => {
+const ProfileEditPage: React.FC = () => {
     const [name, setName] = useState('김잇픽');
+    const navigate = useNavigate();
 
     const handleNameChange = (event: React.FocusEvent<HTMLHeadingElement>) => {
         setName(event.currentTarget.textContent || '김잇픽');
     };
 
+    const handleChangePasswordClick = () => {
+        navigate('/change-password');
+    };
+
     return (
         <div className="w-[390px] flex flex-col items-center mx-auto">
             <header className="w-full flex justify-between items-center py-4">
-            <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] ml-6">프로필 편집</h1>
-              <button className="mr-6 font-pretendard font-medium text-[14px] text-point400">완료</button>
+                <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] ml-6">프로필 편집</h1>
+                <button className="mr-6 font-pretendard font-medium text-[14px] text-point400">완료</button>
             </header>
             <div className="flex flex-col items-center mt-5 text-center">
                 <img src={profile} alt="profile_image" className="w-20 h-20" />
@@ -46,7 +52,12 @@ const MyPage: React.FC = () => {
                         <p className="text-[16px] text-black font-pretendard font-normal">이메일</p>
                         <p className="text-[14px] text-gray3 font-pretendard font-normal">kimitpick@gmail.com</p>
                     </div>
-                    <p className="text-[16px] text-black font-pretendard font-normal py-3">비밀번호 변경</p>
+                    <p
+                        className="text-[16px] text-black font-pretendard font-normal py-3 cursor-pointer"
+                        onClick={handleChangePasswordClick}
+                    >
+                        비밀번호 변경
+                    </p>
                     <p className="text-[16px] text-errorpoint font-pretendard font-normal py-3">탈퇴하기</p>
                 </div>
             </div>
@@ -54,4 +65,4 @@ const MyPage: React.FC = () => {
     );
 };
 
-export default MyPage;
+export default ProfileEditPage;
