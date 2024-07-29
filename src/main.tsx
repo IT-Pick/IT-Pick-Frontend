@@ -5,7 +5,7 @@ import './index.css';
 import HomePage from './pages/HomePage/HomePage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import SetProfile from './pages/SetProfile/SetProfile';
+// import SetProfile from './pages/SetProfile/SetProfile';
 import ParticipatedDebatesPage from './pages/HistoryPage/ParticipatedDebate';
 import DebatePage from './pages/HistoryPage/Debate';
 import RankingPage from './pages/RankingPage/RankingPage';
@@ -13,6 +13,7 @@ import PwdChangePage from './pages/ChangeInfoPage/PwdChangePage';
 import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
+import ExceptionPage from './pages/HistoryPage/ExceptionPage';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
     <BrowserRouter>
@@ -29,6 +30,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/change-password" element={<PwdChangePage />} />
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/profile-edit" element={<ProfileEditPage />} />
+        <Route path='/debate-exception' element={<ExceptionPage id={1}/>} />
+        <Route path='/participated-Debate-exception' element={<ExceptionPage id={2}/>} />
+        <Route path='/notification-exception' element={<ExceptionPage id={3}/>} />
 
       </Routes>
     </BrowserRouter>

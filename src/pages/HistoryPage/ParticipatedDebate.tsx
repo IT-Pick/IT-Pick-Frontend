@@ -1,6 +1,7 @@
 import React from "react";
 import tag_ico_comment from '../../assets/images/16x16/tag_ico_comment.svg'
 import tag_ico_view from "../../assets/images/16x16/tag_ico_view.svg"
+import { useNavigate } from "react-router-dom";
 
 const myParticipatedDebates = [
     { id: 1, title: '김현주', about: "김현주 열애설", tags: [3025, 123], time: 30 },
@@ -42,6 +43,10 @@ const SortingDebates = ({ title, about, tags, time }) => (
 );
 
 const ParticipatedDebates: React.FC = () => {
+    const navigate = useNavigate();
+    const handleNoParticipatedDebateClick = () => {
+        navigate('/participated-debate-exception');
+    }
     return (
         <div className="w-[390px] mx-auto">
             <header className="w-full flex justify-between items-center py-4">
@@ -50,6 +55,7 @@ const ParticipatedDebates: React.FC = () => {
             {myParticipatedDebates.map((item) => (
                 <SortingDebates key={item.id} {...item} />
             ))}
+            <button onClick={handleNoParticipatedDebateClick}>예외 페이지</button>
         </div>
     );
 }

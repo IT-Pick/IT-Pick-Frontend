@@ -3,6 +3,7 @@ import tag_ico_comment from '../../assets/images/16x16/tag_ico_comment.svg'
 import tag_ico_view from "../../assets/images/16x16/tag_ico_view.svg"
 import ico_roundcheck from "../../assets/images/24x24/ico_roundcheck_filled.svg"
 import ico_rounduncheck from "../../assets/images/24x24/ico_roundcheck_outline.svg"
+import { useNavigate } from "react-router-dom";
 
 interface Debates {
     id: number;
@@ -52,7 +53,11 @@ const SortingDebates = ({ id, title, about, tags, time, editMode, selectedItems,
     </div>
 );
 
-const Debate = () => {
+const Debate: React.FC = () => {
+    const navigate = useNavigate();
+    const handleNoDebateClick = () => {
+        navigate('/debate-exception');
+    }
     const [isEditMode, setIsEditMode] = useState(false);
     const [selectedItems, setSelectedItems] = useState([]);
 
@@ -84,7 +89,9 @@ const Debate = () => {
                     toggleSelect={toggleSelect} 
                 />
             ))}
+            <button onClick={handleNoDebateClick}>예외 페이지</button>
         </div>
+        
     );
 }
 
