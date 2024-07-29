@@ -59,7 +59,7 @@ const SignUpPage: React.FC = () => {
   return (
     <div className="w-[390px] mx-auto pt-[72px]">
       <h1 className="text-2xl font-pretendard font-bold ml-6">
-        <span className="text-point500">회원가입</span>을 위한<br />정보를 입력해주세요.
+        <span className="text-point500">회원가입</span>을 위한<p>정보를 입력해주세요.</p>
       </h1>
       <div className="mt-9 mb-4">
         <label className="block font-pretendard font-bold text-[16px] text-black ml-8">이메일</label>
