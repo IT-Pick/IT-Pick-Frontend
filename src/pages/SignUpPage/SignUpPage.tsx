@@ -1,29 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import InputField from './components/InputField';
 import Checkbox from './components/Checkbox';
 import { validateEmail, validatePassword } from './utils/validation';
 
 const SignUpPage: React.FC = () => {
   const [email, setEmail] = useState('');
-  const [isEmailValid, setIsEmailValid] = useState(false);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [agreeToMarketing, setAgreeToMarketing] = useState(false);
 
+  const isEmailValid = useMemo(() => validateEmail(email), [email]);
+  const isPasswordValid = useMemo(() => validatePassword(password), [password]);
+
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newEmail = event.target.value;
-    setEmail(newEmail);
-    setIsEmailValid(validateEmail(newEmail));
+    setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newPassword = event.target.value;
-    setPassword(newPassword);
-    setIsPasswordValid(validatePassword(newPassword));
+    setPassword(event.target.value);
   };
 
   const handleConfirmPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,6 +43,7 @@ const SignUpPage: React.FC = () => {
           placeholder="이메일을 입력해주세요"
           isValid={isEmailValid}
           errorMessage="이메일 주소를 정확하게 입력해주세요."
+          showValidationButton={true}
         />
       </div>
       <div className="mb-4">

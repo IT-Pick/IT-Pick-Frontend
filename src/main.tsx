@@ -5,7 +5,7 @@ import './index.css';
 import HomePage from './pages/HomePage/HomePage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import SetProfile from './pages/SetProfile/SetProfile';
+//import SetProfile from './pages/SetProfile/SetProfile';
 import ParticipatedDebatesPage from './pages/HistoryPage/ParticipatedDebate';
 import DebatePage from './pages/HistoryPage/Debate';
 import RankingPage from './pages/RankingPage/RankingPage';
