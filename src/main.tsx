@@ -13,6 +13,7 @@ import PwdChangePage from './pages/ChangeInfoPage/PwdChangePage';
 import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
+import AgreementPage from './pages/AgreementPage/AgreementPage';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
     <BrowserRouter>
@@ -22,14 +23,13 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/login" element={<LoginPage />} />
         {/* <Route path="/set-profile" element={<SetProfile />} /> */}
         <Route path="/new-set-profile" element={<NewSetProfile />} />
-
         <Route path="/participated-debates" element={<ParticipatedDebatesPage />} />
         <Route path="/debate" element={<DebatePage />} />
         <Route path="/ranking" element={<RankingPage />} />
         <Route path="/change-password" element={<PwdChangePage />} />
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/profile-edit" element={<ProfileEditPage />} />
-
+        <Route path='/agreement' element={<AgreementPage/>} />
       </Routes>
     </BrowserRouter>
   // </React.StrictMode>
