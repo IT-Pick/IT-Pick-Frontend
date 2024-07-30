@@ -13,6 +13,7 @@ import PwdChangePage from './pages/ChangeInfoPage/PwdChangePage';
 import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
+import ErrorPage from './pages/ErrorPage/404ErrorPage';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
     <BrowserRouter>
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/change-password" element={<PwdChangePage />} />
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/profile-edit" element={<ProfileEditPage />} />
+        <Route path="/error" element={<ErrorPage />} />
 
       </Routes>
     </BrowserRouter>
