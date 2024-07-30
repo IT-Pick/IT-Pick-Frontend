@@ -56,7 +56,7 @@ const SortingDebates = ({ id, title, about, tags, time, editMode, selectedItems,
 const Debate: React.FC = () => {
     const navigate = useNavigate();
     const handleNoDebateClick = () => {
-        navigate('/debate-exception');
+        navigate('/debate-no-data');
     }
     const [isEditMode, setIsEditMode] = useState(false);
     const [selectedItems, setSelectedItems] = useState([]);
