@@ -14,6 +14,7 @@ import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
 import AgreementPage from './pages/AgreementPage/AgreementPage';
+import NoDataPage from './components/NoDataPage';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
     <BrowserRouter>
@@ -30,6 +31,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/profile-edit" element={<ProfileEditPage />} />
         <Route path='/agreement' element={<AgreementPage/>} />
+        <Route path='/debate-no-data' element={<NoDataPage id={1}/>} />
+        <Route path='/participated-debate-no-data' element={<NoDataPage id={2}/>} />
+        <Route path='/notification-no-data' element={<NoDataPage id={3}/>} />
       </Routes>
     </BrowserRouter>
   // </React.StrictMode>
