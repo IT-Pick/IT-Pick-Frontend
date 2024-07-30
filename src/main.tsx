@@ -15,6 +15,7 @@ import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
 import AgreementPage from './pages/AgreementPage/AgreementPage';
 import NoDataPage from './components/NoDataPage';
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
     <BrowserRouter>
