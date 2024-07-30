@@ -13,7 +13,7 @@ import PwdChangePage from './pages/ChangeInfoPage/PwdChangePage';
 import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
-import ExceptionPage from './pages/HistoryPage/ExceptionPage';
+import NoDataPage from './components/NoDataPage';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
     <BrowserRouter>
@@ -30,9 +30,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/change-password" element={<PwdChangePage />} />
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/profile-edit" element={<ProfileEditPage />} />
-        <Route path='/debate-exception' element={<ExceptionPage id={1}/>} />
-        <Route path='/participated-Debate-exception' element={<ExceptionPage id={2}/>} />
-        <Route path='/notification-exception' element={<ExceptionPage id={3}/>} />
+        <Route path='/debate-no-data' element={<NoDataPage id={1}/>} />
+        <Route path='/participated-Debate-no-data' element={<NoDataPage id={2}/>} />
+        <Route path='/notification-no-data' element={<NoDataPage id={3}/>} />
 
       </Routes>
     </BrowserRouter>
