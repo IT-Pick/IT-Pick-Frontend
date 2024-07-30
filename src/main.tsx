@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/profile-edit" element={<ProfileEditPage />} />
         <Route path='/debate-no-data' element={<NoDataPage id={1}/>} />
-        <Route path='/participated-Debate-no-data' element={<NoDataPage id={2}/>} />
+        <Route path='/participated-debate-no-data' element={<NoDataPage id={2}/>} />
         <Route path='/notification-no-data' element={<NoDataPage id={3}/>} />
 
       </Routes>
