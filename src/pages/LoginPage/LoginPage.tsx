@@ -5,11 +5,19 @@ import Visibility from '../../assets/images/visibility.svg';
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState('');
+    const [isEmailValid, setIsEmailValid] = useState(false);
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(event.target.value);
+        const newEmail = event.target.value;
+        setEmail(newEmail);
+        setIsEmailValid(validateEmail(newEmail));
+    };
+
+    const validateEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     };
 
     const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,11 +39,8 @@ const Login: React.FC = () => {
                     입니다.
                 </h1>
                 <form className="space-y-4">
-                    <div className="space-y-3">
-                        <label
-                            htmlFor="email"
-                            className="text-[16px] text-black font-[700]"
-                        >
+                    <div className="space-y-3 relative">
+                        <label htmlFor="email" className="text-[16px] text-black font-[700]">
                             이메일
                         </label>
                         <input
@@ -46,12 +51,14 @@ const Login: React.FC = () => {
                             className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] bg-[#F8F9FC] rounded-[8px] focus:outline-none text-[black] font-[500]"
                             placeholder="이메일을 입력해주세요"
                         />
+                        {!isEmailValid && email.length > 0 && (
+                            <p className="text-[12px] text-errorpoint font-pretendard font-medium mt-1 ml-2">
+                                이메일 주소를 정확하게 입력해주세요.
+                            </p>
+                        )}
                     </div>
                     <div className="space-y-3 relative">
-                        <label
-                            htmlFor="password"
-                            className="text-[16px] text-black font-[700]"
-                        >
+                        <label htmlFor="password" className="text-[16px] text-black font-[700]">
                             비밀번호
                         </label>
                         <input
@@ -67,10 +74,7 @@ const Login: React.FC = () => {
                             onClick={handleTogglePasswordVisibility}
                             className="absolute inset-y-0 right-0 pt-[25px] flex items-center text-gray-500"
                         >
-                            <img
-                                src={showPassword ? Visibility : NonVisibility}
-                                alt="toggle password visibility"
-                            />
+                            <img src={showPassword ? Visibility : NonVisibility} alt="toggle password visibility" />
                         </button>
                     </div>
                     <div>
