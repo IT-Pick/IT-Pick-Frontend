@@ -45,7 +45,7 @@ const SortingDebates = ({ title, about, tags, time }) => (
 const ParticipatedDebates: React.FC = () => {
     const navigate = useNavigate();
     const handleNoParticipatedDebateClick = () => {
-        navigate('/participated-debate-exception');
+        navigate('/participated-debate-no-data');
     }
     return (
         <div className="w-[390px] mx-auto">
