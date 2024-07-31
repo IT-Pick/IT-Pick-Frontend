@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
 import alarm from '../../assets/images/ic_alarm.svg';
 import profile from '../../assets/images/ic_profile.svg';
 import { useNavigate } from 'react-router-dom';
 
+const customStyles = {
+  overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  }
+};
+
 const MyPage: React.FC = () => {
     const navigate = useNavigate();
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const handleProfileEditClick = () => {
       navigate('/profile-edit');
     };
   
     const handleLogoutClick = () => {
-      // 로그아웃 로직 추가
+      setModalIsOpen(true); // 모달 열기
+    };
+
+    const confirmLogout = () => {
+      // 로그아웃 로직 추가해야 함
       navigate('/');
     };
   
@@ -52,6 +64,19 @@ const MyPage: React.FC = () => {
                     <p className="text-[16px] text-black font-pretendard font-normal py-3">약관 및 정책</p>
                 </div>
             </div>
+            <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                style={customStyles}
+                contentLabel="Logout Confirmation"
+                className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg"
+            >
+                <h2 className="text-lg font-bold mb-4">로그아웃 하시겠어요?</h2>
+                <div className="flex justify-center mt-4 gap-4">
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={confirmLogout}>예</button> {/* confirmLogout 함수 사용 */}
+                    <button className="bg-gray-200 text-black px-4 py-2 rounded" onClick={() => setModalIsOpen(false)}>아니오</button>
+                </div>
+            </Modal>
         </div>
     );
 };
