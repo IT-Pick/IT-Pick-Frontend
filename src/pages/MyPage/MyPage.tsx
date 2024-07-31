@@ -5,7 +5,7 @@ import profile from '../../assets/images/ic_profile.svg';
 import { useNavigate } from 'react-router-dom';
 import CancelButton from '../../components/Cancel';
 import LogoutButton from '../../components/Logout';
-
+import logout from '../../assets/images/etc/ico_logout.svg';
 
 const customStyles = {
   overlay: {
@@ -74,7 +74,9 @@ const MyPage: React.FC = () => {
                 contentLabel="Logout Confirmation"
                 className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg"
             >
-                <h2 className="text-[#1d2228] text-lg font-bold">로그아웃 하시겠어요?</h2>
+              <img src={logout} alt="logout_icon" className="w-16 h-16" />
+                <h2 className="text-[#1d2228] text-lg font-bold mt-[12px]">로그아웃 하시겠어요?</h2>
+                <div className="w-40 h-8 text-[#464f59] text-center text-sm font-medium font-['Pretendard']">나중에 언제든지 다시 로그인하실 수 있어요.</div>
                 <div className="flex justify-center mt-4 gap-4">
                   <CancelButton onClose={() => setModalIsOpen(false)} />
                   <LogoutButton onClose={() => confirmLogout()} />
