@@ -33,7 +33,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/my-page" element={<MyPage />} />
         <Route path="/profile-edit" element={<ProfileEditPage />} />
         <Route path="/search" element={<SearchPage />} />
-
         <Route path='/agreement' element={<AgreementPage/>} />
         <Route path='/debate-no-data' element={<NoDataPage id={1}/>} />
         <Route path='/participated-debate-no-data' element={<NoDataPage id={2}/>} />
