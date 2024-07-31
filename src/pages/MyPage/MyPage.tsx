@@ -4,6 +4,7 @@ import alarm from '../../assets/images/ic_alarm.svg';
 import profile from '../../assets/images/ic_profile.svg';
 import { useNavigate } from 'react-router-dom';
 import CancelButton from '../../components/Cancel';
+import LogoutButton from '../../components/Logout';
 
 
 const customStyles = {
@@ -73,10 +74,10 @@ const MyPage: React.FC = () => {
                 contentLabel="Logout Confirmation"
                 className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg"
             >
-                <h2 className="text-lg font-bold mb-4">로그아웃 하시겠어요?</h2>
+                <h2 className="text-[#1d2228] text-lg font-bold">로그아웃 하시겠어요?</h2>
                 <div className="flex justify-center mt-4 gap-4">
                   <CancelButton onClose={() => setModalIsOpen(false)} />
-                  <button className="bg-gray-200 text-black px-4 py-2 rounded" onClick={() => setModalIsOpen(false)}>아니오</button>
+                  <LogoutButton onClose={() => confirmLogout()} />
                 </div>
             </Modal>
         </div>
