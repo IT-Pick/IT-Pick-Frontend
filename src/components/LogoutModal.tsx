@@ -1,8 +1,8 @@
 import React from 'react';
 import Modal from 'react-modal';
-import logout from '../../assets/images/etc/ico_logout.svg';
-import CancelButton from '../../components/Cancel';
-import LogoutButton from '../../components/Logout';
+import logout from '../assets/images/etc/ico_logout.svg';
+import CancelButton from './Cancel';
+import LogoutButton from './Logout';
 
 const customStyles = {
   content: {
