@@ -35,7 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/debate-no-data' element={<NoDataPage id={1}/>} />
         <Route path='/participated-debate-no-data' element={<NoDataPage id={2}/>} />
         <Route path='/notification-no-data' element={<NoDataPage id={3}/>} />
-        <Route path='/error' element={<ErrorPage />} />
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   // </React.StrictMode>
