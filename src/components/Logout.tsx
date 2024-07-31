@@ -13,14 +13,12 @@ const LogoutButton: React.FC<LogoutButtonProps> = () => {
   };
 
   return (
-    <div className="h-12 justify-start items-start inline-flex">
         <button
-            className="w-32 h-12 px-12 py-3 bg-[#7620e4] rounded-lg justify-center items-center flex"
+            className="w-[128px] h-[48px] bg-point500 rounded-lg justify-center items-center flex"
             onClick={handleLogout}
         >
-            <div className="text-center text-white text-base font-semibold font-['Pretendard']">로그아웃</div>
+            <div className="text-center text-white font-semibold">로그아웃</div>
         </button>
-    </div>
     );
 };
 
