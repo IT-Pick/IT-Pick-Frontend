@@ -3,6 +3,8 @@ import Modal from 'react-modal';
 import alarm from '../../assets/images/ic_alarm.svg';
 import profile from '../../assets/images/ic_profile.svg';
 import { useNavigate } from 'react-router-dom';
+import CancelButton from '../../components/Cancel';
+
 
 const customStyles = {
   overlay: {
@@ -73,8 +75,8 @@ const MyPage: React.FC = () => {
             >
                 <h2 className="text-lg font-bold mb-4">로그아웃 하시겠어요?</h2>
                 <div className="flex justify-center mt-4 gap-4">
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded" onClick={confirmLogout}>예</button> {/* confirmLogout 함수 사용 */}
-                    <button className="bg-gray-200 text-black px-4 py-2 rounded" onClick={() => setModalIsOpen(false)}>아니오</button>
+                  <CancelButton onClose={() => setModalIsOpen(false)} />
+                  <button className="bg-gray-200 text-black px-4 py-2 rounded" onClick={() => setModalIsOpen(false)}>아니오</button>
                 </div>
             </Modal>
         </div>
