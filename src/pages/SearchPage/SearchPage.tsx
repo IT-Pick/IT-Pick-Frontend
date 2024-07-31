@@ -60,14 +60,16 @@ const SearchPage: React.FC = () => {
     '김현주 남친',
   ]);
 
+  const [isSearchActive, setIsSearchActive] = useState(false);
+
   const [searchResults, setSearchResults] = useState([
     { title: '김현주 열애설', sources: ['나무위키 1등', '트위터 1등'] },
     { title: '김현주', sources: ['나무위키 2등', '네이버 1등'] },
-    { title: '김현주 차은우', sources: ['네이버 2등', '트위터 2등'] },
-    { title: '김현주 결혼', sources: ['나무위키 1등'] },
-    { title: '김현주 결혼' },
+    { title: '김윤서 차은우', sources: ['네이버 2등', '트위터 2등'] },
+    { title: '김현주 결혼', sources: ['줌 1등'] },
+    { title: '김윤서 결혼' },
     { title: '김현주 결혼', sources: ['나무위키 1등', '나무위키 1등'] },
-    { title: '김현주 결혼', sources: ['나무위키 1등', '나무위키 1등'] },
+    { title: '김윤서 결혼', sources: ['줌 5등', '나무위키 5등'] },
   ]);
 
   const removeTag = (tagToRemove: string) => {
@@ -92,23 +94,28 @@ const SearchPage: React.FC = () => {
   const handleSearch = (term: string) => {
     const filteredResults = searchResults.filter(result => result.title.includes(term));
     setSearchResults(filteredResults);
+    setIsSearchActive(true);
   };
 
   return (
     <div className="w-[390px] mx-auto pt-[20px] bg-background">
       <SearchBar placeholder="김현주 열애설" onSearch={handleSearch} />
       
-      <RecentSearches tags={tags} removeTag={removeTag} removeAllTags={removeAllTags} />
+      {!isSearchActive && (
+        <>
+          <RecentSearches tags={tags} removeTag={removeTag} removeAllTags={removeAllTags} />
+          <PopularSearches searches={totalPopularSearches} />
+          <RecentDiscussions discussions={discussions} />
+        </>
+      )}
 
-      <PopularSearches searches={totalPopularSearches} />
-
-      <RecentDiscussions discussions={discussions} />
-
-      <div>
-        {searchResults.map((result, index) => (
-          <SearchResultItem key={index} title={result.title} sources={result.sources} />
-        ))}
-      </div>
+      {isSearchActive && (
+        <div>
+          {searchResults.map((result, index) => (
+            <SearchResultItem key={index} title={result.title} sources={result.sources} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
