@@ -16,7 +16,8 @@ const customStyles = {
     borderRadius: '24px'
   },
   overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.5)'
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      backdropFilter: 'blur(2px)'
   }
 };
 
