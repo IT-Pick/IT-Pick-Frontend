@@ -44,7 +44,7 @@ const InputField: React.FC<InputFieldProps> = ({
           {showValidationButton && (
             <button
               type="button"
-              className="flex-shrink-0 h-[54px] pr-[12px] flex items-center justify-center"
+              className="absolute right-[12px] h-[54px] flex items-center justify-center"
               disabled={!isValid}
             >
               <img src={isValid ? certifyAble : certifyUnable} alt="email validation" />
@@ -54,7 +54,7 @@ const InputField: React.FC<InputFieldProps> = ({
             <button
               type="button"
               onClick={onToggle}
-              className="flex-shrink-0 h-[54px] px-[22px] flex items-center justify-center"
+              className="absolute right-[22px] h-[54px] flex items-center justify-center"
             >
               <img src={isToggled ? showIcon : hideIcon} alt="toggle visibility" />
             </button>

@@ -14,6 +14,9 @@ import MyPage from './pages/MyPage/MyPage';
 import ProfileEditPage from './pages/ChangeInfoPage/ProfileEditPage';
 import NewSetProfile from './pages/SetProfile/NewSetProfile';
 import SearchPage from './pages/SearchPage/SearchPage';
+import AgreementPage from './pages/AgreementPage/AgreementPage';
+import NoDataPage from './components/NoDataPage';
+import ErrorPage from './pages/ErrorPage/404ErrorPage';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
     <BrowserRouter>
@@ -23,7 +26,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/login" element={<LoginPage />} />
         {/* <Route path="/set-profile" element={<SetProfile />} /> */}
         <Route path="/new-set-profile" element={<NewSetProfile />} />
-
         <Route path="/participated-debates" element={<ParticipatedDebatesPage />} />
         <Route path="/debate" element={<DebatePage />} />
         <Route path="/ranking" element={<RankingPage />} />
@@ -32,6 +34,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/profile-edit" element={<ProfileEditPage />} />
         <Route path="/search" element={<SearchPage />} />
 
+        <Route path='/agreement' element={<AgreementPage/>} />
+        <Route path='/debate-no-data' element={<NoDataPage id={1}/>} />
+        <Route path='/participated-debate-no-data' element={<NoDataPage id={2}/>} />
+        <Route path='/notification-no-data' element={<NoDataPage id={3}/>} />
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   // </React.StrictMode>
