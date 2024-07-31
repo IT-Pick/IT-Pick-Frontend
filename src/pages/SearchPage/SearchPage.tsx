@@ -3,7 +3,7 @@ import SearchBar from './components/SearchBar';
 import RecentSearches from './components/RecentSearches';
 import PopularSearches from './components/PopularSearches';
 import RecentDiscussions from './components/RecentDiscussions';
-//import SearchResults from './components/SearchResults';
+import SearchResultItem from './components/SearchResultItem';
 import LiveDiscussion1 from '../../assets/images/LiveDiscussion/LiveDiscussion1.png';
 import LiveDiscussion2 from '../../assets/images/LiveDiscussion/LiveDiscussion2.png';
 import LiveDiscussion3 from '../../assets/images/LiveDiscussion/LiveDiscussion3.png';
@@ -95,7 +95,7 @@ const SearchPage: React.FC = () => {
   };
 
   return (
-    <div className="w-[390px] mx-auto pt-[20px]">
+    <div className="w-[390px] mx-auto pt-[20px] bg-background">
       <SearchBar placeholder="김현주 열애설" onSearch={handleSearch} />
       
       <RecentSearches tags={tags} removeTag={removeTag} removeAllTags={removeAllTags} />
@@ -104,7 +104,11 @@ const SearchPage: React.FC = () => {
 
       <RecentDiscussions discussions={discussions} />
 
-      {/* <SearchResults results={searchResults} /> */}
+      <div>
+        {searchResults.map((result, index) => (
+          <SearchResultItem key={index} title={result.title} sources={result.sources} />
+        ))}
+      </div>
     </div>
   );
 }
