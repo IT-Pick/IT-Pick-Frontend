@@ -37,14 +37,14 @@ const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onRequestClose, onCon
       className="flex flex-col items-center bg-[#ffffff] rounded-[24px] shadow-lg" 
     >
       <img src={logout} alt="logout_icon" className="w-[52px] h-[52px] mt-[20px]" />
-      <h2 className="text-[#1d2228] text-lg font-bold mt-[12px]">
+      <div className="text-[#1d2228] text-lg font-bold mt-[12px]">
         로그아웃 하시겠어요?
-      </h2>
-      <div className="w-[160px] h-[32px] text-[#464f59] text-center text-[14px] mt-2">
+      </div>
+      <div className="w-[160px] h-[32px] text-[#464f59] text-center text-[14px]">
         <p>나중에 언제든지 다시 로그인</p>
         <p>하실 수 있어요.</p>
-      </div> 
-      <div className="flex justify-center mt-4 gap-4">
+      </div>
+      <div className="flex justify-center mt-[15px] gap-4">
         <CancelButton onClose={onRequestClose} />
         <LogoutButton onClose={onConfirmLogout} />
       </div>

@@ -41,11 +41,11 @@ const DeleteAccountModal: React.FC<DeleteAccountModalProps> = ({ isOpen, onReque
         <div className='inline-block'>김잇픽</div>
         <div className='inline-block'>님과 이별인가요..?</div>
       </div>
-      <div className="w-[160px] h-[32px] text-[#464f59] text-center text-[14px] mt-2">
+      <div className="w-[160px] h-[32px] text-[#464f59] text-center text-[14px]">
         <p>탈퇴 버튼 선택 시, 계정은</p>
         <p>삭제되며 복구되지 않습니다.</p>
       </div> 
-      <div className="flex justify-center mt-4 gap-4">
+      <div className="flex justify-center mt-[15px] gap-4">
         <CancelButton onClose={onRequestClose} />
         <DeleteAccountButton onClose={onConfirmDeleteAccount} />
       </div>
