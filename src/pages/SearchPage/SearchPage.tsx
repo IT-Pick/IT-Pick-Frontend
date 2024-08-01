@@ -53,6 +53,16 @@ const discussions = [
   },
 ];
 
+const initialSearchResults = [
+  { title: '김현주 열애설', sources: ['나무위키 1등', '트위터 1등'] },
+  { title: '김현주', sources: ['나무위키 2등', '네이버 1등'] },
+  { title: '김윤서 차은우', sources: ['네이버 2등', '트위터 2등'] },
+  { title: '김현주 결혼', sources: ['줌 1등'] },
+  { title: '김윤서 결혼' },
+  { title: '김현주 결혼', sources: ['나무위키 1등', '나무위키 1등'] },
+  { title: '김윤서 결혼', sources: ['줌 5등', '나무위키 5등'] },
+];
+
 const SearchPage: React.FC = () => {
   const [tags, setTags] = useState([
     '김현주',
@@ -62,15 +72,7 @@ const SearchPage: React.FC = () => {
 
   const [isSearchActive, setIsSearchActive] = useState(false);
 
-  const [searchResults, setSearchResults] = useState([
-    { title: '김현주 열애설', sources: ['나무위키 1등', '트위터 1등'] },
-    { title: '김현주', sources: ['나무위키 2등', '네이버 1등'] },
-    { title: '김윤서 차은우', sources: ['네이버 2등', '트위터 2등'] },
-    { title: '김현주 결혼', sources: ['줌 1등'] },
-    { title: '김윤서 결혼' },
-    { title: '김현주 결혼', sources: ['나무위키 1등', '나무위키 1등'] },
-    { title: '김윤서 결혼', sources: ['줌 5등', '나무위키 5등'] },
-  ]);
+  const [searchResults, setSearchResults] = useState(initialSearchResults);
 
   const removeTag = (tagToRemove: string) => {
     setTags(tags.filter(tag => tag !== tagToRemove));
@@ -92,9 +94,14 @@ const SearchPage: React.FC = () => {
   ];
 
   const handleSearch = (term: string) => {
-    const filteredResults = searchResults.filter(result => result.title.includes(term));
-    setSearchResults(filteredResults);
-    setIsSearchActive(true);
+    if (term === '') {
+      setSearchResults(initialSearchResults);
+      setIsSearchActive(false);
+    } else {
+      const filteredResults = initialSearchResults.filter(result => result.title.includes(term));
+      setSearchResults(filteredResults);
+      setIsSearchActive(true);
+    }
   };
 
   return (
