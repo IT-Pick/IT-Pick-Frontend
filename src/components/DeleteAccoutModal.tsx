@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import trash from '../assets/images/etc/ico_trash.svg';
 import CancelButton from './CancelButton';
-import LogoutButton from './LogoutButton';
+import DeleteAccountButton from './DeleteAccountButton';
 
 const customStyles = {
   content: {
@@ -21,19 +21,19 @@ const customStyles = {
   }
 };
 
-interface DeleteAccoutModalProps {
+interface DeleteAccountModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
-  onConfirmLogout: () => void;
+  onConfirmDeleteAccount: () => void;
 }
 
-const DeleteAccoutModal: React.FC<DeleteAccoutModalProps> = ({ isOpen, onRequestClose, onConfirmLogout }) => {
+const DeleteAccountModal: React.FC<DeleteAccountModalProps> = ({ isOpen, onRequestClose, onConfirmDeleteAccount }) => {
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       style={customStyles}
-      contentLabel="Logout Confirmation"
+      contentLabel="DeleteAccount Confirmation"
       className="flex flex-col items-center bg-[#ffffff] rounded-[24px] shadow-lg" 
     >
       <img src={trash} alt="trash_icon" className="w-[52px] h-[52px] mt-[20px]" />
@@ -47,10 +47,10 @@ const DeleteAccoutModal: React.FC<DeleteAccoutModalProps> = ({ isOpen, onRequest
       </div> 
       <div className="flex justify-center mt-4 gap-4">
         <CancelButton onClose={onRequestClose} />
-        <LogoutButton onClose={onConfirmLogout} />
+        <DeleteAccountButton onClose={onConfirmDeleteAccount} />
       </div>
     </Modal>
   );
 };
 
-export default DeleteAccoutModal;
+export default DeleteAccountModal;
