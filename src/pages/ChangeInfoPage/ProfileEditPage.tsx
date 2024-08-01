@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import profile from '../../assets/images/ico_profile_edit.svg';
+import DeleteAccoutModal from '../../components/DeleteAccoutModal';
 
 const ProfileEditPage: React.FC = () => {
     const [name, setName] = useState('김잇픽');
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const navigate = useNavigate();
 
     const handleNameChange = (event: React.FocusEvent<HTMLHeadingElement>) => {
@@ -12,6 +14,15 @@ const ProfileEditPage: React.FC = () => {
 
     const handleChangePasswordClick = () => {
         navigate('/change-password');
+    };
+
+    const handleDeleteAccountClick = () => {
+        setIsDeleteModalOpen(true);
+    };
+
+    const confirmDeleteAccount = () => {
+        // 탈퇴 로직 추가
+        navigate('/');
     };
 
     return (
@@ -58,9 +69,19 @@ const ProfileEditPage: React.FC = () => {
                     >
                         비밀번호 변경
                     </p>
-                    <p className="text-[16px] text-errorpoint font-pretendard font-normal py-3">탈퇴하기</p>
+                    <p
+                        className="text-[16px] text-errorpoint font-pretendard font-normal py-3 cursor-pointer"
+                        onClick={handleDeleteAccountClick}
+                    >
+                        탈퇴하기
+                    </p>
                 </div>
             </div>
+            <DeleteAccoutModal
+                isOpen={isDeleteModalOpen}
+                onRequestClose={() => setIsDeleteModalOpen(false)}
+                onConfirmDelete={confirmDeleteAccount}
+            />
         </div>
     );
 };

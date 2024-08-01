@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import alarm from '../../assets/images/ic_alarm.svg';
 import profile from '../../assets/images/ic_profile.svg';
 import { useNavigate } from 'react-router-dom';
+import LogoutModal from '../../components/LogoutModal';
 
 const MyPage: React.FC = () => {
     const navigate = useNavigate();
+    const [modalIsOpen, setModalIsOpen] = useState(false);
 
     const handleProfileEditClick = () => {
       navigate('/profile-edit');
     };
   
     const handleLogoutClick = () => {
-      // 로그아웃 로직 추가
+      setModalIsOpen(true); // 모달 열기
+    };
+
+    const confirmLogout = () => {
+      // 로그아웃 로직 추가해야 함
       navigate('/');
     };
   
@@ -52,6 +58,11 @@ const MyPage: React.FC = () => {
                     <p className="text-[16px] text-black font-pretendard font-normal py-3">약관 및 정책</p>
                 </div>
             </div>
+            <LogoutModal
+                isOpen={modalIsOpen}
+                onRequestClose={() => setModalIsOpen(false)}
+                onConfirmLogout={confirmLogout}
+            />
         </div>
     );
 };
