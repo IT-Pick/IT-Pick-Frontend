@@ -1,4 +1,6 @@
 import React from 'react';
+import tag_ico_view from '../../../assets/images/16x16/tag_ico_view.svg';
+import tag_ico_comment from '../../../assets/images/16x16/tag_ico_comment.svg';
 
 interface DiscussionCardProps {
   image: string;
@@ -8,16 +10,20 @@ interface DiscussionCardProps {
   link: string;
 }
 
+const formatNumber = (num) => {
+  return new Intl.NumberFormat().format(num);
+};
+
 const DiscussionCard: React.FC<DiscussionCardProps> = ({ image, hits, comments, title, link }) => (
   <div className="font-pretendard">
     <img src={image} alt={title} className="rounded-2xl mb-2" />
     <div className="flex justify-start items-center gap-2 mb-2">
-      <div className="bg-point100 rounded-2xl px-2 py-1 flex items-center">
-        <span className="text-point500 text-[12px] font-medium">{hits}</span>
+      <div className="bg-point100 text-point500 rounded-2xl px-2 py-1 gap-[2px] flex items-center font-pretendard font-medium text-[12px]">
+        <img src={tag_ico_view} alt="tag_ico_view" /> {formatNumber(hits)}
       </div>
       {comments !== null && (
-        <div className="bg-point100 rounded-2xl px-2 py-1 flex items-center">
-          <span className="text-point500 text-[12px] font-medium">{comments}</span>
+        <div className="bg-point100 text-point500 rounded-2xl px-2 py-1 gap-[2px] flex items-center font-pretendard font-medium text-[12px]">
+          <img src={tag_ico_comment} alt="tag_ico_comment" /> {formatNumber(comments)}
         </div>
       )}
     </div>
