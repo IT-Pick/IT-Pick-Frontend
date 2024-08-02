@@ -4,7 +4,7 @@ import tag_ico_comment from '../../../assets/images/16x16/tag_ico_comment.svg';
 
 interface DiscussionCardProps {
   image: string;
-  hits: number;
+  hits: number | null;
   comments: number | null;
   title: string;
   link: string;
@@ -18,12 +18,16 @@ const DiscussionCard: React.FC<DiscussionCardProps> = ({ image, hits, comments, 
   <div className="font-pretendard">
     <img src={image} alt={title} className="rounded-2xl mb-2" />
     <div className="flex justify-start items-center gap-2 mb-2">
-      <div className="bg-point100 text-point500 rounded-2xl px-2 py-1 gap-[2px] flex items-center font-pretendard font-medium text-[12px]">
-        <img src={tag_ico_view} alt="tag_ico_view" /> {formatNumber(hits)}
+      {hits !== null && (
+        <div className="bg-point100 text-point500 rounded-2xl px-2 py-1 gap-[2px] flex items-center font-pretendard font-medium text-[12px]">
+        <img src={tag_ico_view} alt="tag_ico_view" /> 
+        {formatNumber(hits)}
       </div>
+      )}
       {comments !== null && (
         <div className="bg-point100 text-point500 rounded-2xl px-2 py-1 gap-[2px] flex items-center font-pretendard font-medium text-[12px]">
-          <img src={tag_ico_comment} alt="tag_ico_comment" /> {formatNumber(comments)}
+          <img src={tag_ico_comment} alt="tag_ico_comment" /> 
+          {formatNumber(comments)}
         </div>
       )}
     </div>
