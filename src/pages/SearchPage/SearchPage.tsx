@@ -4,6 +4,7 @@ import RecentSearches from './components/RecentSearches';
 import PopularSearches from './components/PopularSearches';
 import RecentDiscussions from './components/RecentDiscussions';
 import SearchResultItem from './components/SearchResultItem';
+import ErrorPage from './components/405ErrorPage';
 import LiveDiscussion1 from '../../assets/images/LiveDiscussion/LiveDiscussion1.png';
 import LiveDiscussion2 from '../../assets/images/LiveDiscussion/LiveDiscussion2.png';
 import LiveDiscussion3 from '../../assets/images/LiveDiscussion/LiveDiscussion3.png';
@@ -74,6 +75,8 @@ const SearchPage: React.FC = () => {
 
   const [searchResults, setSearchResults] = useState(initialSearchResults);
 
+  const [noResults, setNoResults] = useState(false);
+
   const removeTag = (tagToRemove: string) => {
     setTags(tags.filter(tag => tag !== tagToRemove));
   };
@@ -97,10 +100,12 @@ const SearchPage: React.FC = () => {
     if (term === '') {
       setSearchResults(initialSearchResults);
       setIsSearchActive(false);
+      setNoResults(false);
     } else {
       const filteredResults = initialSearchResults.filter(result => result.title.includes(term));
       setSearchResults(filteredResults);
       setIsSearchActive(true);
+      setNoResults(filteredResults.length === 0);
     }
   };
 
@@ -108,7 +113,7 @@ const SearchPage: React.FC = () => {
     <div className="w-[390px] mx-auto pt-[20px] bg-background">
       <SearchBar placeholder="김현주 열애설" onSearch={handleSearch} />
       
-      {!isSearchActive && (
+      {!isSearchActive && !noResults && (
         <>
           <RecentSearches tags={tags} removeTag={removeTag} removeAllTags={removeAllTags} />
           <PopularSearches searches={totalPopularSearches} />
@@ -116,13 +121,15 @@ const SearchPage: React.FC = () => {
         </>
       )}
 
-      {isSearchActive && (
+      {isSearchActive && !noResults && (
         <div>
           {searchResults.map((result, index) => (
             <SearchResultItem key={index} title={result.title} sources={result.sources} />
           ))}
         </div>
       )}
+
+      {noResults && <ErrorPage />}
     </div>
   );
 }
