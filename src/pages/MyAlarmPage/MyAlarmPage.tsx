@@ -76,7 +76,7 @@ const AlarmPage: React.FC = () => {
         <h1 className="text-[20px] text-black font-bold ml-4">알림</h1>
       </header>
       <div className="p-4">
-        {Alarms.map((alarm) => (
+        {sortedAlarms.map((alarm) => (
           <AlarmItem key={alarm.id} {...alarm} />
         ))}
       </div>
