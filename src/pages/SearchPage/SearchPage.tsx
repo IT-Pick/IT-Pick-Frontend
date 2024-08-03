@@ -110,7 +110,7 @@ const SearchPage: React.FC = () => {
   };
 
   return (
-    <div className="w-[390px] mx-auto pt-[20px] bg-background">
+    <div className="w-[390px] mx-auto pt-[20px] bg-background min-h-screen">
       <SearchBar placeholder="김현주 열애설" onSearch={handleSearch} />
       
       {!isSearchActive && !noResults && (
