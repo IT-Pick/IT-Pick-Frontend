@@ -69,6 +69,7 @@ const AlarmItem: React.FC<Alarm> = ({title, about, tag,time }) => {
 );
 };
 const AlarmPage: React.FC = () => {
+  const sortedAlarms = Alarms.sort((a, b) => b.time - a.time);
   return (
     <div className="w-[390px] mx-auto bg-white">
       <header className="w-full py-4 border-b">
