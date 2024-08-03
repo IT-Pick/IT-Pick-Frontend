@@ -32,15 +32,11 @@ const AlarmItem: React.FC<Alarm> = ({ title, about, tag,time }) => (
       <div className="flex justify-between">
         <div className="text-[14px] text-gray5 font-semibold">{title} {about}</div>
       </div>
-      <p className='flex'>
-        <div className="text-[12px] text-gray3">
-          {time} | 
-        </div>
-        <div className='text-[12px] text-point500'>
-          {tag}
-        </div>
+      <p className='flex space-x-[4px] text-[12px]'>
+        <div className=" text-gray3"> {time} </div>
+        <div className='text-gray2'> | </div>
+        <div className=' text-point500'> {tag} </div>
       </p>
-    
   </div>
 );
 
