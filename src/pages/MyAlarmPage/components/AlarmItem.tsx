@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alarm } from '../../../data/types';
-import { getTimeDifference } from '../../../utils/timeUtils'
+import { getTimeDifference } from '../../../utils/timeUtils';
 
 interface AlarmItemProps extends Alarm {
   onAlarmClick: (id: number) => void;
@@ -11,17 +11,17 @@ const AlarmItem: React.FC<AlarmItemProps> = (
 ) => {
   return (
     <div 
-      className={`p-4 mb-2 rounded-lg ${isRead ? 'bg-white' : 'bg-[#F3EEFF]'}`}
+      className={`p-[16px] ${isRead ? 'bg-[#f8f9fc]' : 'bg-purple-100'}`}
       onClick={() => onAlarmClick(id)}
-    >
-      <div className="flex justify-between">
-        <div className="text-[14px] text-gray5 font-semibold">{title} {about}</div>
-      </div>
-      <p className='flex space-x-[4px] text-[12px]'>
-        <div className="text-gray3">{getTimeDifference(time)}</div>
-        <div className='text-gray2'>|</div>
-        <div className='text-point500'>{tag}</div>
-      </p>
+    > 
+        <div className=''>
+          <div className="text-[14px] text-gray-700 font-semibold">{title} {about}</div>
+          <p className='flex space-x-[4px] text-[12px] text-gray-500'>
+              <span>{getTimeDifference(time)}</span>
+              <span className='text-gray-400'>|</span>
+              <span className='text-purple-500'>{tag}</span>
+          </p>
+        </div>
     </div>
   );
 };

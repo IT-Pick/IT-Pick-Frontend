@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Alarm } from '../../data/types'
+import { Alarm } from '../../data/types';
 import { Alarms } from '../../data/alarms';
 import AlarmItem from './components/AlarmItem';
 
@@ -12,14 +12,14 @@ const saveReadStatus = (status: { [key: number]: boolean }) => {
   localStorage.setItem('alarmReadStatus', JSON.stringify(status));
 };
 
-const AlarmPage: React.FC = () => {
+const MyAlarmPage: React.FC = () => {
   const [alarms, setAlarms] = useState<Alarm[]>([]);
 
   useEffect(() => {
     const readStatus = getReadStatus();
     const updatedAlarms = Alarms.map(alarm => ({
       ...alarm,
-      isRead: readStatus[alarm.id] || false
+      isRead: readStatus[alarm.id] || false,
     }));
     setAlarms(updatedAlarms.sort((a, b) => b.time - a.time));
   }, []);
@@ -39,17 +39,20 @@ const AlarmPage: React.FC = () => {
   };
 
   return (
-    <div className="w-[390px] mx-auto bg-white">
-      <header className="w-full py-4 border-b">
-        <h1 className="text-[20px] text-black font-bold ml-4">알림</h1>
+    <div className="w-[390px] mx-auto bg-background">
+      <header className="w-full py-[24.5px] bg-white">
+        <h1 className="text-[20px] text-black font-bold mt-[16px] ml-[24px] ">알림</h1>
       </header>
-      <div className="p-4">
-        {alarms.map((alarm) => (
-          <AlarmItem key={alarm.id} {...alarm} onAlarmClick={handleAlarmClick} />
+      <div>
+        {alarms.map((alarm, index) => (
+          <React.Fragment key={alarm.id}>
+            <AlarmItem {...alarm} onAlarmClick={handleAlarmClick} />
+            {index < alarms.length - 1 && <div className="border-[2px] border-[##edf0f3] h-[2px] "></div>}
+          </React.Fragment>
         ))}
       </div>
     </div>
   );
-}
+};
 
-export default AlarmPage;
+export default MyAlarmPage;
