@@ -1,5 +1,4 @@
 import React from 'react';
-import { Alarm } from '../../../data/types';
 import { getTimeDifference } from '../../../utils/timeUtils';
 
 interface AlarmItemProps extends Alarm {
