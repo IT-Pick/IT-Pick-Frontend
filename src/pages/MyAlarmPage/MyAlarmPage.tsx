@@ -28,9 +28,11 @@ const Alarms: Alarm[] = [
 
 const AlarmItem: React.FC<Alarm> = ({ title, about, time }) => (
   <div className="bg-[#F3EEFF] p-4 mb-2 rounded-lg">
-    <h2 className="text-[16px] font-bold">{title}</h2>
-    <p className="text-[14px]">{about}</p>
-    <p className="text-[12px] text-gray-500">30분 전</p>
+      <div className="flex justify-between">
+        <div className="text-[16px] font-bold">{title} {about}</div>
+      </div>
+      <p className="text-[12px] text-gray-500">30분 전</p>
+    
   </div>
 );
 
