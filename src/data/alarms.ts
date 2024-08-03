@@ -1,4 +1,12 @@
-import { Alarm } from './types';
+interface Alarm {
+    id: number;
+    title: string;
+    about: string;
+    tag: string;
+    time: number;
+    isRead?: boolean;
+  }
+  
 export const Alarms: Alarm[] = [
     { id: 1, title: '[김현주 열애설 어떻게 생각함?]', about: "토론에 댓글이 달렸어요.", tag:"#김현주_열애설", time: 202406310001 },
     { id: 2, title: '[김현주 열애설 어떻게 생각함?]', about: "토론이 인기글에 선정되었어요.", tag:"#김현주_열애설",time: 202406310001 },
