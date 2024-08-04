@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import errorIcon from '../../assets/images/ico_error_logo.png';
 
 const ErrorPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleGoHome = () => {
+    navigate('/');
+  };
+
   return (
     <div className="w-[390px] mx-auto flex flex-col items-center justify-center min-h-screen bg-background">
       <div className="flex-grow flex flex-col items-center">
@@ -13,8 +20,9 @@ const ErrorPage: React.FC = () => {
         <button
           className={`w-full h-[48px] py-2 rounded flex items-center justify-center font-pretendard font-bold text-[16px] text-white bg-point500`}
           style={{ border: 'none', padding: 0, borderRadius: '12px' }}
+          onClick={handleGoHome}
         >
-          다시 시도하기
+          돌아가기
         </button>
       </div>
     </div>
