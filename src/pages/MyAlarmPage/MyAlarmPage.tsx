@@ -47,7 +47,7 @@ const MyAlarmPage: React.FC = () => {
         {alarms.map((alarm, index) => (
           <React.Fragment key={alarm.id}>
             <AlarmItem {...alarm} onAlarmClick={handleAlarmClick} />
-            {index < alarms.length - 1 && <div className="border-[2px] border-[##edf0f3] h-[2px] "></div>}
+            {index < alarms.length - 1 && <div className="border-[2px] border-[#edf0f3] h-[2px] "></div>}
           </React.Fragment>
         ))}
       </div>

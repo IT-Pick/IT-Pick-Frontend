@@ -16,8 +16,8 @@ const AlarmItem: React.FC<AlarmItemProps> = (
         <div className=''>
           <div className="text-[14px] text-gray-700 font-semibold">{title} {about}</div>
           <p className='flex space-x-[4px] text-[12px] text-gray-500'>
-              <span>{getTimeDifference(time)}</span>
-              <span className='text-gray-400'>|</span>
+              <span className='text-gray3'>{getTimeDifference(time)}</span>
+              <span className='text-gray2'>|</span>
               <span className='text-purple-500'>{tag}</span>
           </p>
         </div>
