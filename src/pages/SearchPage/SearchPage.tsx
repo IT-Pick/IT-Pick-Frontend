@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchBar from './components/SearchBar';
+import SearchBar from '../../components/SearchBar';
 import RecentSearches from './components/RecentSearches';
 import PopularSearches from './components/PopularSearches';
 import RecentDiscussions from './components/RecentDiscussions';
