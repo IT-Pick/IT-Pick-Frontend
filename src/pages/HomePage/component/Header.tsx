@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import ico_alarm from "../../../assets/images/ico_alarm.svg";
 import ico_mypage from "../../../assets/images/ico_mypage.svg";
+import AlarmButton from '../../../components/AlarmButton';
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -18,9 +18,9 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="flex justify-end p-4">
-      <div className="flex space-x-[32px]">
-        <img src={ico_alarm} alt="Notifications" className="w-6 h-6" />
+    <header className="flex justify-end mt-[8px] mb-[8px]">
+      <div className="flex">
+        <AlarmButton />
         <img src={ico_mypage} alt="Profile" className="w-6 h-6 mr-[22px] cursor-pointer" onClick={handleProfileClick} />
       </div>
     </header>

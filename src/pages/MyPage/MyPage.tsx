@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import alarm from '../../assets/images/ic_alarm.svg';
+import AlarmButton from '../../components/AlarmButton';
 import profile from '../../assets/images/ic_profile.svg';
 import { useNavigate } from 'react-router-dom';
 import LogoutModal from '../../components/LogoutModal';
@@ -33,7 +33,8 @@ const MyPage: React.FC = () => {
         <div className="w-[390px] flex flex-col items-center mx-auto">
             <header className="w-full flex justify-between items-center py-4">
             <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] ml-6">마이페이지</h1>
-              <button className="mr-6"><img src={alarm} alt="alarm_icon"/></button>
+              {/* <button className="mr-6"><img src={alarm} alt="alarm_icon"/></button> */}
+              <AlarmButton />
             </header>
             <div className="flex flex-col items-center mt-5 text-center">
                 <img src={profile} alt="profile_image" className="w-20 h-20" />

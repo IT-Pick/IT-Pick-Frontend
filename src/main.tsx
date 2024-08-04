@@ -17,6 +17,7 @@ import AgreementPage from './pages/AgreementPage/AgreementPage';
 import NoDataPage from './components/NoDataPage';
 import KeywordPage from './pages/KeywordPage/KeywordPage';
 import ErrorPage from './pages/ErrorPage/404ErrorPage';
+import MyAlarm from './pages/MyAlarmPage/MyAlarmPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
@@ -38,6 +39,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/participated-debate-no-data' element={<NoDataPage id={2}/>} />
         <Route path='/notification-no-data' element={<NoDataPage id={3}/>} />
         <Route path='/keyword' element={<KeywordPage/>} />
+        <Route path='/my-alarm' element={<MyAlarm />} />
+
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
