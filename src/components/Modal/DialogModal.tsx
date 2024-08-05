@@ -49,9 +49,9 @@ const DialogModal: React.FC<CommonModalProps> = ({
       className="flex flex-col items-center bg-[#ffffff] rounded-[24px] shadow-lg"
     >
       <img src={icon} alt="modal_icon" className="w-[52px] h-[52px] mt-[20px]" />
-      <div className="text-[#1d2228] text-lg font-bold mt-[12px]">{title}</div>
-      <div className="w-[160px] h-[32px] text-[#464f59] text-center text-[14px]">{message}</div>
-      <div className="flex justify-center mt-[15px] gap-4">
+      <div className="text-[#1d2228] text-[18px] font-bold mt-[12px] leading-[28.80px]">{title}</div>
+      <div className="w-[160px] h-[32px] text-[#464f59] text-center text-[14px] leading-[16.80px]">{message}</div>
+      <div className="flex justify-center mt-[15px] gap-[8px]">
         <ActionButton
           text="취소"
           onClick={onRequestClose}
@@ -60,7 +60,7 @@ const DialogModal: React.FC<CommonModalProps> = ({
           aria-label="모달 창 상자 닫기"
         />
         <ActionButton
-          text={confirmText}
+          text={confirmText} //로그아웃 또는 탈퇴하기 
           onClick={onConfirm}
           bgColor="bg-point500"
           textColor="text-white"
