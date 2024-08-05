@@ -16,6 +16,7 @@ import NewSetProfile from './pages/SetProfile/NewSetProfile';
 import AgreementPage from './pages/AgreementPage/AgreementPage';
 import NoDataPage from './components/NoDataPage';
 import KeywordPage from './pages/KeywordPage/KeywordPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 import ErrorPage from './pages/ErrorPage/404ErrorPage';
 import MyAlarm from './pages/MyAlarmPage/MyAlarmPage';
 
@@ -40,6 +41,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/notification-no-data' element={<NoDataPage id={3}/>} />
         <Route path='/keyword' element={<KeywordPage/>} />
         <Route path='/my-alarm' element={<MyAlarm />} />
+        <Route path="/search" element={<SearchPage />} />
 
         <Route path='*' element={<ErrorPage />} />
       </Routes>
