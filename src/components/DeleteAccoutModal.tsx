@@ -45,14 +45,14 @@ const DeleteAccountModal: React.FC<DeleteAccountModalProps> = ({ isOpen, onReque
         <p>삭제되며 복구되지 않습니다.</p>
       </div> 
       <div className="flex justify-center mt-[15px] gap-4">
-      <ActionButton 
-          text="취소" 
+      <ActionButton
+          text="취소"
           onClick={onRequestClose}
           bgColor="bg-[#f1e6ff]"
           textColor="text-[#7620e4]"
         />
-        <ActionButton 
-          text="탈퇴하기" 
+        <ActionButton
+          text="탈퇴하기"
           onClick={onConfirmDeleteAccount}
           bgColor="bg-point500"
           textColor="text-white"
