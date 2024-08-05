@@ -1,8 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 import logout from '../assets/images/etc/ico_logout.svg';
-import CancelButton from './CancelButton';
-import LogoutButton from './LogoutButton';
 
 const customStyles = {
   content: {
@@ -45,7 +43,10 @@ const LogoutModal: React.FC<LogoutModalProps> = ({ isOpen, onRequestClose, onCon
         <p>하실 수 있어요.</p>
       </div>
       <div className="flex justify-center mt-[15px] gap-4">
-        <CancelButton onClose={onRequestClose} />
+      <CancelButton 
+        onClick={() => setIsOpen(false)} 
+        aria-label="대화 상자 닫기"
+      />
         <LogoutButton onClose={onConfirmLogout} />
       </div>
     </Modal>

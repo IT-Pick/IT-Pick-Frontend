@@ -1,8 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import trash from '../assets/images/etc/ico_trash.svg';
-import CancelButton from './CancelButton';
-import DeleteAccountButton from './DeleteAccountButton';
+import ActionButton from './ActionButton';
 
 const customStyles = {
   content: {
@@ -46,8 +45,18 @@ const DeleteAccountModal: React.FC<DeleteAccountModalProps> = ({ isOpen, onReque
         <p>삭제되며 복구되지 않습니다.</p>
       </div> 
       <div className="flex justify-center mt-[15px] gap-4">
-        <CancelButton onClose={onRequestClose} />
-        <DeleteAccountButton onClose={onConfirmDeleteAccount} />
+      <ActionButton 
+          text="취소" 
+          onClick={onRequestClose}
+          bgColor="bg-[#f1e6ff]"
+          textColor="text-[#7620e4]"
+        />
+        <ActionButton 
+          text="탈퇴하기" 
+          onClick={onConfirmDeleteAccount}
+          bgColor="bg-point500"
+          textColor="text-white"
+        />
       </div>
     </Modal>
   );
