@@ -80,7 +80,7 @@ const Debate: React.FC = () => {
         <div className="w-[390px] mx-auto">
             <header className="w-full flex justify-between items-center py-4">
                 <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] ml-6">내가 만든 토론</h1>
-                <p onClick={toggleEditMode} className="text-[#914CE9] text-[14px] font-[500] mr-[24px] cursor-pointer">
+                <p onClick={toggleEditMode} className="text-point400 text-[14px] font-[500] mr-[24px] cursor-pointer">
                     {isEditMode ? '삭제' : '편집'}
                 </p>
             </header>
