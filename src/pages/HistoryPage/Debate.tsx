@@ -26,13 +26,14 @@ const formatNumber = (num) => {
 };
 
 const SortingDebates = ({ id, title, about, tags, time, editMode, selectedItems, toggleSelect }) => (
-    <div className="flex w-[390px] p-4 bg-[#F8F9FC] border-b-[2px] justify-between items-center">
+    <div className="w-[390px] px-[20px] pt-6 bg-[#F8F9FC] justify-between items-center">
+        <div className="flex border-b-[1px] pb-[20px]">
         {editMode && (
             <button onClick={() => toggleSelect(id)} className="mr-4">
                 <img src={selectedItems.includes(id) ? ico_roundcheck : ico_rounduncheck} alt="select_icon" />
             </button>
         )}
-        <div className="flex flex-col items-start mb-4 gap-[4px] flex-grow">
+        <div className="flex flex-col items-start flex-grow">
             <div className="text-center font-[600] text-[16px]">{title}</div>
             <div className="flex gap-[4px]">
                 <div className="text-[#9EAAB5] text-[12px] font-[400]">{time}분 전 |</div>
@@ -51,6 +52,9 @@ const SortingDebates = ({ id, title, about, tags, time, editMode, selectedItems,
   ))}
 </div>
     </div>
+    </div>
+    
+
 );
 
 const Debate: React.FC = () => {
@@ -76,10 +80,11 @@ const Debate: React.FC = () => {
         <div className="w-[390px] mx-auto">
             <header className="w-full flex justify-between items-center py-4">
                 <h1 className="text-[20px] text-black font-pretendard font-bold leading-[28px] ml-6">내가 만든 토론</h1>
-                <p onClick={toggleEditMode} className="text-[#914CE9] text-[14px] font-[500] mr-[24px] cursor-pointer">
+                <p onClick={toggleEditMode} className="text-point400 text-[14px] font-[500] mr-[24px] cursor-pointer">
                     {isEditMode ? '삭제' : '편집'}
                 </p>
             </header>
+
             {Debates.map((item) => (
                 <SortingDebates 
                     key={item.id} 
@@ -89,6 +94,8 @@ const Debate: React.FC = () => {
                     toggleSelect={toggleSelect} 
                 />
             ))}
+            
+            
             <button onClick={handleNoDebateClick}>예외 페이지</button>
         </div>
         
