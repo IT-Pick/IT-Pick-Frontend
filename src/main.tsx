@@ -19,6 +19,7 @@ import KeywordPage from './pages/KeywordPage/KeywordPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import ErrorPage from './pages/ErrorPage/404ErrorPage';
 import MyAlarm from './pages/MyAlarmPage/MyAlarmPage';
+import VoteComponentTestPage from './pages/WritePostPage/VoteComponentTestPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
@@ -42,6 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/keyword' element={<KeywordPage/>} />
         <Route path='/my-alarm' element={<MyAlarm />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/vote-test" element={<VoteComponentTestPage />} />
 
         <Route path='*' element={<ErrorPage />} />
       </Routes>
