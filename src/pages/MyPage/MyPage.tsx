@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import AlarmButton from '../../components/AlarmButton';
 import profile from '../../assets/images/ic_profile.svg';
 import { useNavigate } from 'react-router-dom';
-import LogoutModal from '../../components/LogoutModal';
+import LogoutModal from '../../components/Modal/LogoutModal';
 
 const MyPage: React.FC = () => {
     const navigate = useNavigate();
