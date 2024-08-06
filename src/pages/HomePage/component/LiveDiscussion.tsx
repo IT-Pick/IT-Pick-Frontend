@@ -34,17 +34,17 @@ const formatNumber = (num) => {
 };
 
 const DiscussionCard = ({ image, hits, comments, title, link }) => (
-  <div className="p-2 flex-shrink-0">
-    <img src={image} alt={title} className="w-[164px] h-[200px] rounded-lg mb-2" />
-    <div className="w-[130px] h-6 justify-start items-start gap-2 inline-flex">
-      <div className="w-[65px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
-        <div className="flex flex-row gap-[4px] text-violet-700 text-xs font-medium font-['Pretendard']"><img src={tag_ico_view} alt='tag_ico_view'/>{formatNumber(hits)}</div>
+  <div className="w-[164px] h-[284px]">
+    <img src={image} alt={title} className="w-full h-[200px] rounded-lg" />
+    <div className="justify-start gap-2 inline-flex mt-[8px]">
+      <div className="w-[65px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center ">
+        <div className="flex flex-row gap-[8px] text-violet-700 text-xs font-medium font-['Pretendard']"><img src={tag_ico_view} alt='tag_ico_view'/>{formatNumber(hits)}</div>
       </div>
       <div className="w-[57px] px-2 py-1 bg-purple-100 rounded-2xl justify-center items-center gap-1 flex">
         <div className="flex flex-row gap-[4px] text-violet-700 text-xs font-medium font-['Pretendard']"><img src={tag_ico_comment} width={16} height={16} alt='tag_ico_view'/>{formatNumber(comments)}</div>
       </div>
     </div>
-    <a href={link} className="block text-[#1D2228] font-pretendard font-bold text-[16px] leading-[22.4px] no-underline text-center mt-2">
+    <a href={link} className="block text-black font-bold text-[16px] leading-[22.4px] no-underline mt-[8px]">
       {title}
     </a>
   </div>
@@ -52,11 +52,11 @@ const DiscussionCard = ({ image, hits, comments, title, link }) => (
 
 const LiveDiscussion: React.FC = () => {
   return (
-    <div className="mt-[44px] ml-[24px]">
+    <div className="mt-[26px] ml-[24px]">
       <div className="flex items-center">
         <span className="text-[#2E333B] font-pretendard text-[20px] font-bold leading-normal">실시간 토론 BEST 3</span>
       </div>
-      <div className="flex overflow-x-auto space-x-3 mt-[13px]">
+      <div className="flex overflow-x-auto space-x-[12px] mt-[12px]">
       {discussions.map((discussion, index) => (
           <DiscussionCard key={index} {...discussion} />
         ))}
