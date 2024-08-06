@@ -1,16 +1,32 @@
 import React from "react";
 import Header from "./components/Header";
+import Content from "./components/Content";
+import CommentList from "./components/CommentList";
 
 const info = [
-    {userName: "헤롱헤롱", time: 25, view: 15554},
-]
+    {
+        userName: "헤롱헤롱",
+        time: 25,
+        view: 15554,
+        title: "김현주 모쏠이다 아니다?",
+        text: "내가 생각했을땐 무조건 모쏠임ㅋㅋ\nㄹㅇ임\n왜냐면 그렇기때문임\n투표ㄲ",
+    },
+];
+
+const comments = [
+    { userName: "티끌", time: 5, like: 1, text: "여왕이다. 대한민국의 왕은 현주다.\n현주로 정권을 교체해달라." },
+    { userName: "김잇픽", time: 8, like: 10, text: "여왕이다. 대한민국의 왕은 현주다.\n현주로 정권을 교체해달라." },
+    { userName: "효지", time: 12, like: 90, text: "여왕이다. 대한민국의 왕은 현주다.\n현주로 정권을 교체해달라." },
+];
 
 const UploadedPage: React.FC = () => {
-    return(
+    return (
         <div className="w-[390px] bg-[#F8F9FC] mx-auto mt-4">
-           <Header info={info[0]}/>
+            <Header info={info[0]} />
+            <Content info={info[0]} />
+            <CommentList comments={comments} />
         </div>
-    )
+    );
 }
 
 export default UploadedPage;
