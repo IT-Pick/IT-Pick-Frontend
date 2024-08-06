@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import VoteOption from './VoteOption';
 
+
 interface VoteOption {
   id: number;
   text: string;
@@ -54,8 +55,8 @@ const VoteCreationForm: React.FC<VoteCreationFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <div className="mt-4 p-4 border rounded">
-      <h3 className="text-lg font-semibold mb-2">투표 옵션</h3>
+    <div className="mt-4 p-4 border rounded bg-gray-100">
+      <h3 className="text-lg font-semibold mb-2">투표 만들기</h3>
       {voteOptions.map((option, index) => (
         <VoteOption
           key={option.id}
@@ -68,26 +69,26 @@ const VoteCreationForm: React.FC<VoteCreationFormProps> = ({ onSubmit }) => {
       ))}
       <button
         onClick={addVoteOption}
-        className="mt-2 text-blue-500 hover:text-blue-700"
+        className="mt-2 bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded w-full"
       >
-        + 항목 추가
+        항목 추가
       </button>
       <div className="mt-4">
-        <label className="flex items-center">
+        <label className="flex items-center justify-between">
+          복수 선택 가능
           <input
             type="checkbox"
             checked={isMultipleChoice}
             onChange={(e) => setIsMultipleChoice(e.target.checked)}
             className="mr-2"
           />
-          복수 선택 가능
         </label>
       </div>
       <button
         onClick={handleSubmit}
-        className="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        className="mt-4 bg-purple-600 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded w-full"
       >
-        투표 생성
+        완료
       </button>
     </div>
   );
