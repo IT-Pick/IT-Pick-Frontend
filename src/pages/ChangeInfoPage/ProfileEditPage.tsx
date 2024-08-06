@@ -20,6 +20,11 @@ const ProfileEditPage: React.FC = () => {
         setIsDeleteModalOpen(true);
     };
 
+    const formatDate = (dateString: string) => {
+        if (dateString.length !== 8) return dateString;
+        return `${dateString.slice(0, 4)}/${dateString.slice(4, 6)}/${dateString.slice(6, 8)}`;
+    };
+
     const confirmDeleteAccount = () => {
         // 탈퇴 로직 추가
         navigate('/');
@@ -49,7 +54,7 @@ const ProfileEditPage: React.FC = () => {
                     <h3 className="text-[16px] text-black font-pretendard font-bold py-3">프로필</h3>
                     <div className="flex justify-between py-3">
                         <p className="text-[16px] text-black font-pretendard font-normal">생년월일</p>
-                        <p className="text-[14px] text-gray3 font-pretendard font-normal">20020927</p>
+                        <p className="text-[14px] text-gray3 font-pretendard font-normal">{formatDate('20020927')}</p>
                     </div>
                     <div className="flex justify-between py-3">
                         <p className="text-[16px] text-black font-pretendard font-normal">관심 주제 설정</p>
