@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Content from "./components/Content";
 import CommentList from "./components/CommentList";
+import AddComment from "./components/AddComment";
 
-const info = [
+const initialInfo = [
     {
         userName: "헤롱헤롱",
         time: 25,
@@ -13,18 +14,31 @@ const info = [
     },
 ];
 
-const comments = [
+const initialComments = [
     { userName: "티끌", time: 5, like: 1, text: "여왕이다. 대한민국의 왕은 현주다.\n현주로 정권을 교체해달라." },
     { userName: "김잇픽", time: 8, like: 10, text: "여왕이다. 대한민국의 왕은 현주다.\n현주로 정권을 교체해달라." },
     { userName: "효지", time: 12, like: 90, text: "여왕이다. 대한민국의 왕은 현주다.\n현주로 정권을 교체해달라." },
 ];
 
 const UploadedPage: React.FC = () => {
+    const [comments, setComments] = useState(initialComments);
+
+    const addComment = (text: string) => {
+        const newComment = {
+            userName: "김잇픽",
+            time: 0, 
+            like: 0, 
+            text: text,
+        };
+        setComments([...comments, newComment]); // 새로운 댓글을 맨 앞에 추가
+    };
+
     return (
-        <div className="w-[390px] bg-[#F8F9FC] mx-auto mt-4">
-            <Header info={info[0]} />
-            <Content info={info[0]} />
+        <div className="w-[390px] bg-[#F8F9FC] mx-auto py-4">
+            <Header info={initialInfo[0]} />
+            <Content info={initialInfo[0]} />
             <CommentList comments={comments} />
+            <AddComment onAddComment={addComment} />
         </div>
     );
 }
