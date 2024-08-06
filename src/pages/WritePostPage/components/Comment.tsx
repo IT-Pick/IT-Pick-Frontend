@@ -8,13 +8,14 @@ interface CommentProps {
     time: number;
     text: string;
     like: number;
+    onLike: () =>void;
 }
 
 const formatNumber = (num: number): string => {
     return new Intl.NumberFormat().format(num);
 };
 
-const Comment: React.FC<CommentProps> = ({ userName, time, text, like }) => {
+const Comment: React.FC<CommentProps> = ({ userName, time, text, like, onLike }) => {
     return (
         <div className="mx-auto w-[337px] h-auto py-[10px] px-[20px] bg-[white] rounded-[20px] mb-3">
             <div className="p-2">
@@ -32,7 +33,9 @@ const Comment: React.FC<CommentProps> = ({ userName, time, text, like }) => {
                 <div className="flex justify-between items-center">
                     <div className="text-[#1D2228] mt-2 whitespace-pre-line">{text}</div>
                     <div className="text-gray-500 text-[12px] flex flex-col justify-center items-center">
-                        <img src={heart} alt="heart icon" />
+                        <button onClick={onLike} className="focus: outline-none">
+                            <img src={heart} alt="heart icon" />
+                        </button>
                         <div>
                             {formatNumber(like)}
                         </div>

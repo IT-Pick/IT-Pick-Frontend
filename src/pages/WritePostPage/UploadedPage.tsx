@@ -30,14 +30,21 @@ const UploadedPage: React.FC = () => {
             like: 0, 
             text: text,
         };
-        setComments([...comments, newComment]); // 새로운 댓글을 맨 앞에 추가
+        setComments([...comments, newComment]);
     };
+
+    const handleLike = (index: number) => {
+        const updatedComments = comments.map((comment, i) => 
+            i === index ? {...comment, like: comment.like +1} : comment
+        );
+        setComments(updatedComments);
+    }
 
     return (
         <div className="w-[390px] bg-[#F8F9FC] mx-auto py-4">
             <Header info={initialInfo[0]} />
             <Content info={initialInfo[0]} />
-            <CommentList comments={comments} />
+            <CommentList comments={comments} onLike={handleLike}/>
             <AddComment onAddComment={addComment} />
         </div>
     );
