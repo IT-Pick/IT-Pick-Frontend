@@ -19,6 +19,7 @@ import KeywordPage from './pages/KeywordPage/KeywordPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import ErrorPage from './pages/ErrorPage/404ErrorPage';
 import MyAlarm from './pages/MyAlarmPage/MyAlarmPage';
+import UploadedPage from './pages/WritePostPage/UploadedPage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
@@ -44,6 +45,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/search" element={<SearchPage />} />
 
         <Route path='*' element={<ErrorPage />} />
+        <Route path='/uploaded-debate' element={<UploadedPage/>} />
       </Routes>
     </BrowserRouter>
   // </React.StrictMode>
