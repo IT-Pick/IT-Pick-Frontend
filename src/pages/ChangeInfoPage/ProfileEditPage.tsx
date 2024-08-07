@@ -8,10 +8,6 @@ const ProfileEditPage: React.FC = () => {
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
     const navigate = useNavigate();
 
-    const handleNameChange = (event: React.FocusEvent<HTMLHeadingElement>) => {
-        setName(event.currentTarget.textContent || '김잇픽');
-    };
-
     const handleChangePasswordClick = () => {
         navigate('/change-password');
     };
@@ -23,6 +19,13 @@ const ProfileEditPage: React.FC = () => {
     const formatDate = (dateString: string) => {
         if (dateString.length !== 8) return dateString;
         return `${dateString.slice(0, 4)}/${dateString.slice(4, 6)}/${dateString.slice(6, 8)}`;
+    };
+
+    const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        if (event.target.value.length > 10) {
+            event.target.value = event.target.value.slice(0, 10);
+        }
+        setName(event.target.value);
     };
 
     const confirmDeleteAccount = () => {
@@ -38,15 +41,15 @@ const ProfileEditPage: React.FC = () => {
             </header>
             <div className="flex flex-col items-center mt-5 text-center">
                 <img src={profile} alt="profile_image" className="w-20 h-20" />
-                <h2
-                    className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] mt-6 bg-gray1 rounded-[8px] focus:outline-none text-black placeholder-gray3 text-[18px] font-pretendard font-medium"
+                <textarea
+                    className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] mt-6 bg-gray1 rounded-[8px] focus:outline-none text-black placeholder-gray3 text-[18px] font-pretendard font-medium resize-none"
                     contentEditable
                     suppressContentEditableWarning
-                    onBlur={handleNameChange}
+                    onChange={handleInput}
                     style={{ textAlign: 'left' }}
                 >
                     {name}
-                </h2>
+                </textarea>
             </div>
             <div className="w-full h-3 bg-gray1 mt-8"></div>
             <div className="w-full">
