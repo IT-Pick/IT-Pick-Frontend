@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import DebateIconBar from './components/DebateIconBar';
 
 const DebateCreatePage: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
   return (
-    <div className="w-[390px] mx-auto flex flex-col items-center justify-center">
-      <div className="bg-white w-full p-6">
+    <div className="w-[390px] h-full mx-auto flex flex-col items-center justify-between">
+      <div className="bg-background w-full p-6">
       <div className="flex justify-between items-center mb-10">
           <div className="font-pretendard font-bold text-lg">
             <span className="text-point500">#김현주 열애설</span>
@@ -19,15 +20,18 @@ const DebateCreatePage: React.FC = () => {
           placeholder="제목을 입력해주세요."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-[335px] px-3 font-pretendard font-bold text-[18px] text-gray3 border-none focus:outline-none"
+          className="w-[335px] px-3 font-pretendard font-bold text-[18px] text-gray3 border-none focus:outline-none bg-background"
         />
         <hr className="w-[350px] border-t border-gray1 my-[20px]" />
         <textarea
           placeholder="자유롭게 이야기해 보세요."
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-[335px] h-[109px] px-3 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none"
+          className="w-[335px] h-[109px] px-3 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
         />
+      </div>
+      <div className="w-[390px] flex justify-center mt-5 mb-5">
+        <DebateIconBar />
       </div>
     </div>
   );
