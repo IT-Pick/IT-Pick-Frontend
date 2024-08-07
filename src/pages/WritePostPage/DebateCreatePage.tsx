@@ -27,7 +27,7 @@ const DebateCreatePage: React.FC = () => {
           placeholder="자유롭게 이야기해 보세요."
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-[335px] h-[109px] px-5 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
+          className="w-[335px] h-full px-5 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
         />
       </div>
       <div className="w-[390px] flex justify-center py-3 bg-white">
