@@ -43,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/keyword' element={<KeywordPage/>} />
         <Route path='/my-alarm' element={<MyAlarm />} />
         <Route path="/search" element={<SearchPage />} />
-        <Route path="/debate-create" element={<DebateCreatePage />} />
+        <Route path="/create" element={<DebateCreatePage />} />
 
         <Route path='*' element={<ErrorPage />} />
       </Routes>
