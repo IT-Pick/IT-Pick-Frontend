@@ -5,9 +5,13 @@ const DebateCreatePage: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const [viewportHeight, setViewportHeight] = useState(window.innerHeight); 
 
   useEffect(() => {
     const handleResize = () => {
+      const currentViewportHeight = visualViewport.height;
+      setViewportHeight(currentViewportHeight);
+      
       if (window.visualViewport.height < window.innerHeight) {
         setIsKeyboardVisible(true);
       } else {
@@ -47,7 +51,8 @@ const DebateCreatePage: React.FC = () => {
           className="w-[335px] flex-grow px-5 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
         />
       </div>
-      <div className={`w-[390px] flex justify-center py-3 bg-white ${isKeyboardVisible ? 'fixed bottom-0' : 'absolute bottom-0'}`}>
+      <div className={`w-[390px] flex justify-center py-3 bg-white ${isKeyboardVisible ? 'fixed bottom-0' : 'absolute bottom-0'}`}
+      style={{ bottom: isKeyboardVisible ? `${window.innerHeight - viewportHeight}px` : '0' }}>
         <DebateIconBar />
       </div>
     </div>
