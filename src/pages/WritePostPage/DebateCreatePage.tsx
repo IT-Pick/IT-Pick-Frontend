@@ -16,7 +16,7 @@ const DebateCreatePage: React.FC = () => {
     };
 
     window.visualViewport.addEventListener('resize', handleResize);
-
+    handleResize(); //초기화
     return () => {
       window.visualViewport.removeEventListener('resize', handleResize);
     };
@@ -47,7 +47,7 @@ const DebateCreatePage: React.FC = () => {
           className="w-[335px] flex-grow px-5 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
         />
       </div>
-      <div className={`w-[390px] flex justify-center py-3 bg-white ${isKeyboardVisible ? 'fixed bottom-0' : ''}`}>
+      <div className={`w-[390px] flex justify-center py-3 bg-white ${isKeyboardVisible ? 'fixed bottom-0' : 'absolute bottom-0'}`}>
         <DebateIconBar />
       </div>
     </div>
