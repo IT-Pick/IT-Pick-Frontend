@@ -24,7 +24,7 @@ const DebateCreatePage: React.FC = () => {
 
   return (
     <div className="w-[390px] h-screen mx-auto flex flex-col items-center justify-between bg-background">
-      <div className={`w-full h-full flex flex-col ${isKeyboardVisible ? 'pb-[calc(100vh-50px)]' : ''}`}>
+      <div className="w-full h-full flex flex-col">
         <div className="flex justify-between items-center mb-6 py-4 px-6 bg-white">
           <div className="font-pretendard font-bold text-lg">
             <span className="text-point500">#김현주 열애설</span>
