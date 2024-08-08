@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import tag_ico_vote_gray from '../../../assets/images/16x16/tag_ico_vote_gray.svg';
-import tag_ico_picture_gray from '../../../assets/images/16x16/tag_ico_picture_gray.svg';
+import tag_ico_picture_gray from '../../../assets/images/16x16/tag_ico_pic_gray.svg';
 import tag_ico_vote_point from '../../../assets/images/16x16/tag_ico_vote.svg';
-import tag_ico_picture_point from '../../../assets/images/16x16/tag_ico_vote.svg';
+import tag_ico_picture_point from '../../../assets/images/16x16/tag_ico_pic.svg';
 
 const DebateIconBar: React.FC = () => {
   const [voteActive, setVoteActive] = useState(false);

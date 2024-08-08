@@ -8,7 +8,7 @@ const DebateCreatePage: React.FC = () => {
   return (
     <div className="w-[390px] h-screen mx-auto flex flex-col items-center justify-between bg-background">
       <div className="w-full">
-        <div className="flex justify-between items-center mb-10 py-4 px-6 bg-white">
+        <div className="flex justify-between items-center mb-6 py-4 px-6 bg-white">
           <div className="font-pretendard font-bold text-lg">
             <span className="text-point500">#김현주 열애설</span>
             <span className="text-black"> 토론 만들기</span>
