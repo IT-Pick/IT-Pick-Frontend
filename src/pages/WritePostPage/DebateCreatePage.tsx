@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DebateIconBar from './components/DebateIconBar';
 
 const DebateCreatePage: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.clientHeight;
+      setIsKeyboardVisible(windowHeight < documentHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="w-[390px] h-screen mx-auto flex flex-col items-center justify-between bg-background">
@@ -30,7 +45,7 @@ const DebateCreatePage: React.FC = () => {
           className="w-[335px] h-full px-5 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
         />
       </div>
-      <div className="w-[390px] flex justify-center py-3 bg-white">
+      <div className={`w-[390px] flex justify-center py-3 bg-white ${isKeyboardVisible ? 'fixed bottom-0' : ''}`}>
         <DebateIconBar />
       </div>
     </div>
