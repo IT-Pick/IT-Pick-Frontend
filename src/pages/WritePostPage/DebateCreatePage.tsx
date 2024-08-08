@@ -8,15 +8,17 @@ const DebateCreatePage: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.clientHeight;
-      setIsKeyboardVisible(windowHeight < documentHeight);
+      if (window.visualViewport.height < window.innerHeight) {
+        setIsKeyboardVisible(true);
+      } else {
+        setIsKeyboardVisible(false);
+      }
     };
 
-    window.addEventListener('resize', handleResize);
+    window.visualViewport.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.visualViewport.removeEventListener('resize', handleResize);
     };
   }, []);
 
