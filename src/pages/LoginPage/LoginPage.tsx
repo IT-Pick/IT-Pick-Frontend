@@ -31,8 +31,8 @@ const Login: React.FC = () => {
     const isFormValid = email.length > 0 && password.length > 0;
 
     return (
-        <div className="flex w-[390px] h-[800px] mt-[70px] justify-center min-h-screen mx-auto">
-            <div className="w-full max-w-md p-8 rounded-lg">
+        <div className="bg-background flex w-[390px] h-[800px] mt-[70px] justify-center min-h-screen mx-auto">
+            <div className="w-auto max-w-md p-8 rounded-lg">
                 <h1 className="text-[24px] font-[700] mb-[52px]">
                     <div>안녕하세요 :)</div>
                     <span className="text-[#7620E4]">잇픽</span>
@@ -48,7 +48,7 @@ const Login: React.FC = () => {
                             id="email"
                             value={email}
                             onChange={handleEmailChange}
-                            className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] bg-[#F8F9FC] rounded-[8px] focus:outline-none text-[black] font-[500]"
+                            className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] bg-gray1 rounded-[8px] focus:outline-none text-[black] font-[500]"
                             placeholder="이메일을 입력해주세요"
                         />
                         {!isEmailValid && email.length > 0 && (
@@ -66,13 +66,13 @@ const Login: React.FC = () => {
                             id="password"
                             value={password}
                             onChange={handlePasswordChange}
-                            className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] bg-[#F8F9FC] rounded-[8px] focus:outline-none text-[black] font-[500]"
+                            className="w-[352px] h-[54px] pt-[12px] pb-[12px] pl-[20px] text-[18px] bg-gray1 rounded-[8px] focus:outline-none text-[black] font-[500]"
                             placeholder="비밀번호를 입력해주세요"
                         />
                         <button
                             type="button"
                             onClick={handleTogglePasswordVisibility}
-                            className="absolute inset-y-0 right-0 pt-[25px] flex items-center text-gray-500"
+                            className="absolute inset-y-0 right-4 pt-[25px] flex items-center text-gray-500"
                         >
                             <img src={showPassword ? Visibility : NonVisibility} alt="toggle password visibility" />
                         </button>
@@ -87,7 +87,7 @@ const Login: React.FC = () => {
                         </button>
                     </div>
                 </form>
-                <div className="w-[350px] flex justify-between items-center text-[14px] font-[500] text-[#9EAAB5]">
+                <div className="w-[350px] flex justify-around items-center text-[14px] font-[500] text-[#9EAAB5]">
                     <Link to="/signup" className="hover:underline px-[24px] py-[12px]">
                         회원가입
                     </Link>

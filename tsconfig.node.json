@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@images/*": ["assets/images/*"],
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+  },
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "skipLibCheck": true,
