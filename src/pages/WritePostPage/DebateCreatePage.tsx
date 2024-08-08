@@ -1,31 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import DebateIconBar from './components/DebateIconBar';
 
 const DebateCreatePage: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [isKeyboardVisible, setKeyboardVisible] = useState(false);
-  const initialHeight = window.innerHeight;
-
-  useEffect(() => {
-    const handleResize = () => {
-      const heightDiff = initialHeight - window.innerHeight;
-      if (heightDiff > 150) { 
-        setKeyboardVisible(true);
-      } else {
-        setKeyboardVisible(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [initialHeight]);
 
   return (
-    <div className={`w-[390px] mx-auto flex flex-col items-center ${isKeyboardVisible ? 'h-auto' : 'h-screen'} bg-background`}>
+    <div className="w-[390px] h-screen mx-auto flex flex-col items-center justify-between bg-background">
       <div className="w-full">
         <div className="flex justify-between items-center mb-6 py-4 px-6 bg-white">
           <div className="font-pretendard font-bold text-lg">
@@ -49,7 +30,7 @@ const DebateCreatePage: React.FC = () => {
           className="w-[335px] h-full px-5 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
         />
       </div>
-      <div className={`w-[390px] flex justify-center py-3 bg-white ${isKeyboardVisible ? 'fixed bottom-0' : ''}`}>
+      <div className="w-[390px] flex justify-center py-3 bg-white">
         <DebateIconBar />
       </div>
     </div>
