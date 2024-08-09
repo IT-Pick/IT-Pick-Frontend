@@ -41,14 +41,14 @@ const DebateCreatePage: React.FC = () => {
           placeholder="제목을 입력해주세요."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="w-[335px] px-5 font-pretendard font-bold text-[18px] text-gray3 border-none focus:outline-none bg-background"
+          className="w-[335px] px-5 font-pretendard font-bold text-[18px] text-[#2E333B] placeholder-gray3 border-none focus:outline-none bg-background"
         />
         <hr className="w-[350px] border-t border-gray1 my-[20px]" />
         <textarea
           placeholder="자유롭게 이야기해 보세요."
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          className="w-[335px] flex-grow px-5 font-pretendard font-medium text-[16px] text-gray3 border-none focus:outline-none resize-none bg-background"
+          className="w-[335px] flex-grow px-5 font-pretendard font-medium text-[16px] text-gray5 placeholder-gray3 border-none focus:outline-none resize-none bg-background"
         />
       </div>
       <div className={`w-[390px] flex justify-center py-3 bg-white ${isKeyboardVisible ? 'fixed bottom-0' : 'absolute bottom-0'}`}
