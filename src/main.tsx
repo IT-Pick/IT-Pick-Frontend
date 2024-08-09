@@ -16,9 +16,10 @@ import NewSetProfile from './pages/SetProfile/NewSetProfile';
 import AgreementPage from './pages/AgreementPage/AgreementPage';
 import NoDataPage from './components/NoDataPage';
 import KeywordPage from './pages/KeywordPage/KeywordPage';
+import MyAlarm from './pages/MyAlarmPage/MyAlarmPage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import ErrorPage from './pages/ErrorPage/404ErrorPage';
-import MyAlarm from './pages/MyAlarmPage/MyAlarmPage';
+import DebateCreatePage from './pages/WritePostPage/DebateCreatePage';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
@@ -42,6 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/keyword' element={<KeywordPage/>} />
         <Route path='/my-alarm' element={<MyAlarm />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/create" element={<DebateCreatePage />} />
 
         <Route path='*' element={<ErrorPage />} />
       </Routes>
