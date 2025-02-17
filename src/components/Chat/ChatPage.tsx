@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useChat } from '../../context/ChatContext';
-import { Card, CardContent, Input, Button } from '@/components/ui';
+import { Card, CardContent, Input, Button } from '@/components/ui/chat';
 
 const ChatPage = () => {
   const { isChatOpen, messages, addMessage, toggleChat } = useChat();

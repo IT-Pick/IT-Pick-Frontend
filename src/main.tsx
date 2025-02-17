@@ -26,12 +26,16 @@ import { SignUpProvider } from './context/SignUpContext';
 import MakeVote from './pages/MakeVote/MakeVote';
 import SignUpandGreetingPage from './pages/SignUpandGreetingPage/SignUpandGreeetingPage';
 import { KeywordStateProvider } from './context/KeywordStateContext';
+import ChatButton from '@components/Chat/ChatButton';
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
   <KeywordStateProvider>
   <SignUpProvider>
     <BrowserRouter>
+    <ChatButton />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignUpPage />} />
@@ -62,6 +66,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
         <Route path='*' element={<ErrorPage />} />
       </Routes>
+
     </BrowserRouter>
   </SignUpProvider>
   </KeywordStateProvider>
