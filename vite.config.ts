@@ -9,11 +9,10 @@ export default defineConfig({
     mkcert({
       force: false,
     })
-  
-  
   ],
   resolve: {
     alias: {
+      '@': '/src',  // schadcn으로 추가된 부분
       '@images': '/src/assets/images',
       '@components': '/src/components',
       '@utils': '/src/utils',
@@ -24,7 +23,7 @@ export default defineConfig({
     }
   },
   server: {
-    https:{
+    https: {
       key: 'cert/localhost-key.pem',
       cert: 'cert/localhost.pem',
     },
