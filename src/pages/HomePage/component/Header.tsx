@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ico_mypage from "@images/ico_mypage.svg";
 import AlarmButton from '@components/AlarmButton';
-import { Button } from "@components/ui/button";
 
 const Header: React.FC<{ isLoggedIn: boolean }> = ({ isLoggedIn }) => {
   const navigate = useNavigate();
@@ -28,8 +27,6 @@ const Header: React.FC<{ isLoggedIn: boolean }> = ({ isLoggedIn }) => {
           onClick={handleProfileClick} />
           
       </div>
-      <Button>Easy</Button>
-
     </header>
   );
 };
