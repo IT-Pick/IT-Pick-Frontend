@@ -5,7 +5,7 @@ export const getMyDebate = async() => {
     
     try {
         const response = await axios.get(
-            `/user/my-debate`,
+            `/api/user/my-debate`,
             {
                 headers: {
                     'Content-Type': 'application/json',

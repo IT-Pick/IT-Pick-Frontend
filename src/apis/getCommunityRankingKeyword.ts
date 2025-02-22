@@ -2,9 +2,7 @@ import axios from 'axios';
 
 export const getCommunityRankingKeyword = async () => {
   try {
-    const response = await axios.get('/rank/main-keywords', {
-      
-    });
+    const response = await axios.get('/api/rank/main-keywords', {});
 
     return response.data.result;
   } catch (error) {

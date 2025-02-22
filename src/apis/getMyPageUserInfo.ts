@@ -4,7 +4,7 @@ export const getMyPageUserInfo = async () => {
   try {
     const token = localStorage.getItem('accessToken');
 
-    const response = await axios.get('/user/my-page', {
+    const response = await axios.get('/api/user/my-page', {
       headers: {
         'Authorization': `Bearer ${token}`,
       },
