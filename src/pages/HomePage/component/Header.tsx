@@ -25,6 +25,7 @@ const Header: React.FC<{ isLoggedIn: boolean }> = ({ isLoggedIn }) => {
           alt="Profile" 
           className="w-6 h-6 mr-[22px] cursor-pointer" 
           onClick={handleProfileClick} />
+          
       </div>
     </header>
   );

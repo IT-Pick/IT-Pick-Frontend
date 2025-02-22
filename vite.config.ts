@@ -8,10 +8,11 @@ export default defineConfig({
     react(),
     mkcert({
       force: false,
-    }),
+    })
   ],
   resolve: {
     alias: {
+      '@': '/src',  // schadcn으로 추가된 부분
       '@images': '/src/assets/images',
       '@components': '/src/components',
       '@utils': '/src/utils',
