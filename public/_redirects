@@ -1,10 +1,3 @@
-/auth/*  https://itpick.store/auth/:splat  200
-/user/*  https://itpick.store/user/:splat  200
-/keyword/search*  https://itpick.store/keyword/search:splat  200
-/keyword*  https://itpick.store/keyword:splat  200
-/rank/main-keywords  https://itpick.store/rank/main-keywords  200
-/rank/reference*  https://itpick.store/rank/reference:splat  200
-/rank*  https://itpick.store/rank:splat  200
-/debate  https://itpick.store/debate  200
-/debate/*  https://itpick.store/debate/:splat  200
+/api/*  https://itpick.store/:splat  200
+
 /*  /index.html  200

@@ -12,7 +12,7 @@ export const getDebateDetails = async (debateId: number) => {
   console.log(token);
 
   try {
-    const response = await axios.get(`/debate/details`, {
+    const response = await axios.get(`/api/debate/details`, {
       headers: {
         'Authorization': `Bearer ${token}`, // Authorization 헤더에 토큰 추가
       },

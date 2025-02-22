@@ -17,9 +17,13 @@ interface Response {
   result: KeywordResult;
 }
 
-export const getKeywordRelatedData = async (community: string, period: string, keyword: string) => {
+export const getKeywordRelatedData = async (
+  community: string,
+  period: string,
+  keyword: string
+) => {
   try {
-    const response = await axios.get<Response>('/rank/reference', {
+    const response = await axios.get<Response>('/api/rank/reference', {
       params: {
         community: community,
         period: period,
