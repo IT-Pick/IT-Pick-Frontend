@@ -33,7 +33,7 @@
 | **Front-end** | `React`, `TypeScript`,`shadcn`, `tailwind css`, `pnpm ` |
 
 
-## 💻 설치 방법 (작성중)
+## 💻 설치 방법
 1. 저장소 복제
 ```bash
 git clone https://github.com/IT-Pick/IT-Pick-Frontend/
