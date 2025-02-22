@@ -25,16 +25,20 @@
 
     
     
-    "baseUrl": "./src",
-    "paths": {
-      "@images/*": ["assets/images/*"],
-      "@components/*": ["components/*"],
-      "@utils/*": ["utils/*"],
-      "@apis/*": ["apis/*"],
-      "@store/*": ["store/*"],
-    }
     
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+        "@images/*": ["src/assets/images/*"],
+        "@components/*": ["src/components/*"],
+        "@utils/*": ["src/utils/*"],
+        "@apis/*": ["src/apis/*"],
+        "@store/*": ["src/store/*"]
+      }
     
+      
+  
+  
   },
   "include": ["src"]
 }

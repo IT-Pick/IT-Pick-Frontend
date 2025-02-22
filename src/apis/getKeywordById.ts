@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 키워드 ID로 키워드 이름을 불러오는 함수
 export const getKeywordById = async (keywordId: number) => {
-    const response = await axios.get(`/keyword`, {
+    const response = await axios.get(`/api/keyword`, {
         params: {
             keywordId: keywordId,
         },

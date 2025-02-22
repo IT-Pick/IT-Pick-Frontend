@@ -4,7 +4,7 @@ export const getProfileEditUserInfo = async () => {
   try {
     const token = localStorage.getItem('accessToken');
 
-    const response = await axios.get('/user/profile-edit', {
+    const response = await axios.get('/api/user/profile-edit', {
       headers: {
         'Authorization': `Bearer ${token}`,
       },

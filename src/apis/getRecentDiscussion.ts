@@ -4,7 +4,7 @@ export const getRecentDiscussion = async () => {
   try {
     const token = localStorage.getItem('accessToken');
 
-    const response = await axios.get(`debate/recent`, {
+    const response = await axios.get(`/api/debate/recent`, {
       headers: {
         'Authorization': `Bearer ${token}`,
       },
