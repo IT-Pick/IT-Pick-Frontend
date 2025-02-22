@@ -4,7 +4,7 @@ export const getUserNickname = async () => {
   try {
     const token = localStorage.getItem('accessToken');
 
-    const response = await axios.get('/user/nickname', {
+    const response = await axios.get('/api/user/nickname', {
       headers: {
         'Authorization': `Bearer ${token}`,
       },
